@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-900 text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .glow-electric {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(255, 214, 10, 0.5);
+  }
+}
