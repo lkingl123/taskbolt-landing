@@ -2,12 +2,55 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { BoltIcon, CalendarIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://jakelokeai.app.n8n.cloud/webhook/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          source: 'Website Contact Form',
+          priority: 'High'
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <section id="contact" className="py-24 bg-navy-800 relative overflow-hidden">
@@ -83,6 +126,129 @@ export default function Contact() {
               </div>
             </div>
           </div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="mt-12 bg-navy-900 p-8 rounded-2xl border border-navy-700"
+          >
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">Or Send Us a Message</h3>
+
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-500/10 border border-green-500 rounded-lg text-green-500 text-center">
+                ✓ Thanks! We'll contact you within 2 hours during business hours.
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-500/10 border border-red-500 rounded-lg text-red-500 text-center">
+                Something went wrong. Please try again or email us directly.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block text-gray-300 mb-2 text-sm font-medium">
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors"
+                  placeholder="John Smith"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-gray-300 mb-2 text-sm font-medium">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-gray-300 mb-2 text-sm font-medium">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="service" className="block text-gray-300 mb-2 text-sm font-medium">
+                  Type of Business *
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white focus:border-electric-blue focus:outline-none transition-colors"
+                >
+                  <option value="">Select...</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="HVAC">HVAC</option>
+                  <option value="Electrical">Electrical</option>
+                  <option value="Landscaping">Landscaping</option>
+                  <option value="Cleaning">Cleaning</option>
+                  <option value="Handyman">Handyman</option>
+                  <option value="Other">Other Service Business</option>
+                </select>
+              </div>
+
+              <div className="md:col-span-2">
+                <label htmlFor="message" className="block text-gray-300 mb-2 text-sm font-medium">
+                  Tell us about your business
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors resize-none"
+                  placeholder="What automation challenges are you facing?"
+                />
+              </div>
+
+              <div className="md:col-span-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-electric-blue text-navy-900 font-bold rounded-lg hover:bg-electric-yellow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+                >
+                  {isSubmitting ? 'Sending...' : 'Get Your Free Audit →'}
+                </button>
+                <p className="text-gray-400 text-sm text-center mt-3">
+                  We'll respond within 2 hours during business hours (Mon-Fri, 8am-6pm MT)
+                </p>
+              </div>
+            </form>
+          </motion.div>
 
           {/* Trust signals */}
           <motion.div

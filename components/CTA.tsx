@@ -61,6 +61,26 @@ export default function CTA() {
               <div className="text-navy-900 opacity-90">More Leads Captured</div>
             </div>
           </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="mt-12 text-center"
+          >
+            <a
+              href="https://calendly.com/taskbolt/15min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-6 bg-navy-900 text-electric-yellow font-bold rounded-lg text-xl hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+            >
+              Schedule Your Free Audit →
+            </a>
+            <p className="mt-4 text-navy-900 opacity-80 text-lg">
+              No commitment. See exactly how we'll automate your business.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
