@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { BoltIcon } from '@heroicons/react/24/solid';
+import { CALENDLY_URL, TRUST_BADGES } from '@/lib/constants';
 
 export default function Hero() {
   return (
@@ -59,7 +60,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <a
-              href="https://calendly.com/taskbolt/15min"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-electric-blue text-navy-900 font-bold rounded-lg text-lg hover:bg-electric-yellow transition-all duration-300 transform hover:scale-105 glow-electric hover:glow-yellow"
@@ -83,18 +84,12 @@ export default function Hero() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 text-gray-400"
           >
-            <div className="flex items-center gap-2">
-              <BoltIcon className="w-5 h-5 text-electric-yellow" />
-              <span>24-48hr Setup</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BoltIcon className="w-5 h-5 text-electric-yellow" />
-              <span>Unlimited Fixes Included</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BoltIcon className="w-5 h-5 text-electric-yellow" />
-              <span>No Long-Term Contracts</span>
-            </div>
+            {TRUST_BADGES.slice(0, 3).map((badge, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <BoltIcon className="w-5 h-5 text-electric-yellow" />
+                <span>{badge.text}</span>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>

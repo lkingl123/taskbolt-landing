@@ -70,7 +70,7 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-24 bg-navy-800 relative overflow-hidden">
+    <section id="features" className="py-24 bg-navy-800 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-electric-blue to-transparent"></div>
 

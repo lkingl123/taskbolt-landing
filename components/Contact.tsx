@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { BoltIcon, CalendarIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import { CALENDLY_URL, CONTACT_EMAIL, N8N_WEBHOOK_URL, RESPONSE_TIME, BUSINESS_HOURS, COMPANY_LOCATION, TRUST_BADGES } from '@/lib/constants';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -25,7 +26,7 @@ export default function Contact() {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('https://jakelokeai.app.n8n.cloud/webhook/lead-capture', {
+      const response = await fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -81,7 +82,7 @@ export default function Contact() {
           {/* Contact methods */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <a
-              href="https://calendly.com/taskbolt/15min"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-navy-900 p-6 rounded-xl border border-electric-blue hover:border-electric-yellow transition-all duration-300 group"
@@ -105,8 +106,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-2">Email Us</h4>
-                  <a href="mailto:hello@taskbolt.com" className="text-gray-300 text-sm hover:text-electric-blue transition-colors">
-                    hello@taskbolt.com
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-gray-300 text-sm hover:text-electric-blue transition-colors">
+                    {CONTACT_EMAIL}
                   </a>
                   <p className="text-gray-400 text-sm mt-1">Response within 24 hours</p>
                 </div>
@@ -119,7 +120,7 @@ export default function Contact() {
                   <PhoneIcon className="w-6 h-6 text-electric-blue" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-2">Based in Utah</h4>
+                  <h4 className="text-white font-bold mb-2">Based in {COMPANY_LOCATION}</h4>
                   <p className="text-gray-300 text-sm">Serving businesses nationwide</p>
                   <p className="text-gray-400 text-sm mt-1">Local support, anywhere</p>
                 </div>
@@ -244,7 +245,7 @@ export default function Contact() {
                   {isSubmitting ? 'Sending...' : 'Get Your Free Audit →'}
                 </button>
                 <p className="text-gray-400 text-sm text-center mt-3">
-                  We'll respond within 2 hours during business hours (Mon-Fri, 8am-6pm MT)
+                  We'll respond within {RESPONSE_TIME} ({BUSINESS_HOURS})
                 </p>
               </div>
             </form>
@@ -258,18 +259,12 @@ export default function Contact() {
             className="mt-12 text-center"
           >
             <div className="flex flex-wrap items-center justify-center gap-8 text-gray-400">
-              <div className="flex items-center gap-2">
-                <BoltIcon className="w-5 h-5 text-electric-yellow" />
-                <span>24-48hr Setup</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <BoltIcon className="w-5 h-5 text-electric-yellow" />
-                <span>100% Satisfaction Guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <BoltIcon className="w-5 h-5 text-electric-yellow" />
-                <span>Unlimited Support</span>
-              </div>
+              {[TRUST_BADGES[0], TRUST_BADGES[3], TRUST_BADGES[4]].map((badge, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <BoltIcon className="w-5 h-5 text-electric-yellow" />
+                  <span>{badge.text}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
         </motion.div>

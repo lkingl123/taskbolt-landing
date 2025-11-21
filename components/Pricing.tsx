@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { CheckIcon } from '@heroicons/react/24/solid';
+import { CALENDLY_URL } from '@/lib/constants';
 
 const packages = [
   {
@@ -35,7 +36,7 @@ const packages = [
       'Monthly optimization review',
       'Priority support',
     ],
-    popular: true,
+    popular: false,
   },
   {
     name: 'Pro',
@@ -52,6 +53,24 @@ const packages = [
       'White-glove onboarding',
     ],
     popular: false,
+  },
+  {
+    name: 'Custom',
+    setup: 'Custom',
+    monthly: 'Custom',
+    description: 'Tailored automation solutions built for your unique business needs',
+    features: [
+      'Everything in Pro',
+      'Fully custom workflow design',
+      'Multi-platform integrations',
+      'Advanced AI automation',
+      'Custom reporting & analytics',
+      'On-demand support',
+      'Quarterly strategy sessions',
+      'Priority feature development',
+    ],
+    popular: true,
+    isCustom: true,
   },
 ];
 
@@ -80,7 +99,7 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
@@ -120,7 +139,7 @@ export default function Pricing() {
               </div>
 
               <a
-                href="https://calendly.com/taskbolt/15min"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full py-4 px-6 rounded-lg font-bold text-center transition-all duration-300 mb-8 ${

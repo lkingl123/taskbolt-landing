@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { BoltIcon } from '@heroicons/react/24/solid';
+import { CALENDLY_URL, STATS } from '@/lib/constants';
 
 export default function CTA() {
   const ref = useRef(null);
@@ -49,15 +50,15 @@ export default function CTA() {
             className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             <div className="bg-navy-900/30 backdrop-blur-sm p-6 rounded-xl border border-navy-900">
-              <div className="text-4xl font-bold text-navy-900 mb-2">10+</div>
+              <div className="text-4xl font-bold text-navy-900 mb-2">{STATS.hoursSaved}</div>
               <div className="text-navy-900 opacity-90">Hours Saved Per Week</div>
             </div>
             <div className="bg-navy-900/30 backdrop-blur-sm p-6 rounded-xl border border-navy-900">
-              <div className="text-4xl font-bold text-navy-900 mb-2">24-48hr</div>
+              <div className="text-4xl font-bold text-navy-900 mb-2">{STATS.setupTime}</div>
               <div className="text-navy-900 opacity-90">Setup Time</div>
             </div>
             <div className="bg-navy-900/30 backdrop-blur-sm p-6 rounded-xl border border-navy-900">
-              <div className="text-4xl font-bold text-navy-900 mb-2">30%+</div>
+              <div className="text-4xl font-bold text-navy-900 mb-2">{STATS.leadsCaptured}</div>
               <div className="text-navy-900 opacity-90">More Leads Captured</div>
             </div>
           </motion.div>
@@ -70,7 +71,7 @@ export default function CTA() {
             className="mt-12 text-center"
           >
             <a
-              href="https://calendly.com/taskbolt/15min"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-12 py-6 bg-navy-900 text-electric-yellow font-bold rounded-lg text-xl hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 shadow-2xl"
