@@ -1,6 +1,6 @@
 // URL Constants
 export const CALENDLY_URL = 'https://calendly.com/taskbolt/15min';
-export const CONTACT_EMAIL = 'hello@taskbolt.com';
+export const CONTACT_EMAIL = 'jake@taskbolt.work';
 export const N8N_WEBHOOK_URL = 'https://jakelokeai.app.n8n.cloud/webhook/lead-capture';
 
 // Company Info

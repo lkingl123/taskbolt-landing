@@ -99,16 +99,16 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className={`relative bg-navy-800 rounded-2xl p-8 border-2 ${
+              className={`relative bg-navy-800 rounded-2xl p-6 md:p-8 border-2 ${
                 pkg.popular
-                  ? 'border-electric-yellow shadow-2xl shadow-electric-yellow/20 scale-105'
+                  ? 'border-electric-yellow shadow-2xl shadow-electric-yellow/20 md:scale-105'
                   : 'border-navy-700 hover:border-electric-blue'
               } transition-all duration-300`}
             >
@@ -120,19 +120,19 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                <p className="text-gray-400 text-sm mb-6">{pkg.description}</p>
+              <div className="text-center mb-6 md:mb-8">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{pkg.name}</h3>
+                <p className="text-gray-400 text-xs md:text-sm mb-4 md:mb-6">{pkg.description}</p>
 
-                <div className="mb-4">
-                  <div className="text-gray-400 text-sm mb-1">One-time setup</div>
-                  <div className="text-4xl font-bold text-electric-blue">{pkg.setup}</div>
+                <div className="mb-3 md:mb-4">
+                  <div className="text-gray-400 text-xs md:text-sm mb-1">One-time setup</div>
+                  <div className="text-3xl md:text-4xl font-bold text-electric-blue">{pkg.setup}</div>
                 </div>
 
                 <div>
-                  <div className="text-gray-400 text-sm mb-1">Then</div>
+                  <div className="text-gray-400 text-xs md:text-sm mb-1">Then</div>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-bold text-white">{pkg.monthly}</span>
+                    <span className="text-4xl md:text-5xl font-bold text-white">{pkg.monthly}</span>
                     <span className="text-gray-400">/mo</span>
                   </div>
                 </div>

@@ -104,9 +104,9 @@ export default function Contact() {
                 <div className="p-3 bg-electric-blue/10 rounded-lg">
                   <EnvelopeIcon className="w-6 h-6 text-electric-blue" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <h4 className="text-white font-bold mb-2">Email Us</h4>
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-gray-300 text-sm hover:text-electric-blue transition-colors">
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-gray-300 text-sm hover:text-electric-blue transition-colors break-all">
                     {CONTACT_EMAIL}
                   </a>
                   <p className="text-gray-400 text-sm mt-1">Response within 24 hours</p>

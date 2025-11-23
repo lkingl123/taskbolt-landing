@@ -14,30 +14,31 @@ export default function Hero() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-yellow opacity-10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-20">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20">
         <div className="text-center max-w-5xl mx-auto">
           {/* TaskBolt logo */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.6, type: 'spring' }}
-            className="flex justify-center mb-8"
+            className="flex justify-center mb-6 md:mb-8"
           >
             <div className="relative">
               <Image
                 src="/taskbolt_logo.png"
                 alt="TaskBolt Logo"
-                width={180}
-                height={180}
-                className="drop-shadow-lg"
+                width={120}
+                height={120}
+                className="drop-shadow-lg md:w-[180px] md:h-[180px]"
                 priority
               />
-              <div className="absolute inset-0 w-[180px] h-[180px] animate-ping opacity-20">
+              <div className="absolute inset-0 w-[120px] h-[120px] md:w-[180px] md:h-[180px] animate-ping opacity-20">
                 <Image
                   src="/taskbolt_logo.png"
                   alt="TaskBolt Logo"
-                  width={180}
-                  height={180}
+                  width={120}
+                  height={120}
+                  className="md:w-[180px] md:h-[180px]"
                 />
               </div>
             </div>
@@ -48,7 +49,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight px-2"
           >
             Never Miss Another Lead{' '}
             <span className="text-electric-yellow">While You're on the Job</span>
@@ -59,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto"
+            className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto px-2"
           >
             Utah's fastest automation setup for service businesses. We build it, maintain it,
             and guarantee it works - or we fix it free.
@@ -70,13 +71,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 py-4 bg-electric-blue text-navy-900 font-bold rounded-lg text-lg hover:bg-electric-yellow transition-all duration-300 transform hover:scale-105 glow-electric hover:glow-yellow"
+              className="group relative w-full sm:w-auto px-6 md:px-8 py-4 bg-electric-blue text-navy-900 font-bold rounded-lg text-base md:text-lg hover:bg-electric-yellow transition-all duration-300 transform hover:scale-105 glow-electric hover:glow-yellow text-center"
             >
               <span className="relative z-10">Schedule Free 15-Min Call</span>
               <div className="absolute inset-0 bg-electric-yellow opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300"></div>
@@ -84,7 +85,7 @@ export default function Hero() {
 
             <a
               href="#pricing"
-              className="px-8 py-4 border-2 border-electric-blue text-electric-blue font-bold rounded-lg text-lg hover:bg-electric-blue hover:text-navy-900 transition-all duration-300"
+              className="w-full sm:w-auto px-6 md:px-8 py-4 border-2 border-electric-blue text-electric-blue font-bold rounded-lg text-base md:text-lg hover:bg-electric-blue hover:text-navy-900 transition-all duration-300 text-center"
             >
               View Pricing
             </a>
@@ -95,12 +96,12 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 text-gray-400"
+            className="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-gray-400 mb-20 md:mb-0"
           >
             {TRUST_BADGES.slice(0, 3).map((badge, index) => (
               <div key={index} className="flex items-center gap-2">
                 <BoltIcon className="w-5 h-5 text-electric-yellow" />
-                <span>{badge.text}</span>
+                <span className="text-sm md:text-base">{badge.text}</span>
               </div>
             ))}
           </motion.div>
@@ -112,7 +113,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 hidden md:flex"
       >
         <div className="flex flex-col items-center gap-2 text-gray-400">
           <span className="text-sm">Scroll to explore</span>
