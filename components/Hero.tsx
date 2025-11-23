@@ -99,6 +99,7 @@ export default function Hero() {
           >
             {TRUST_BADGES.slice(0, 3).map((badge, index) => (
               <div key={index} className="flex items-center gap-2">
+                <BoltIcon className="w-5 h-5 text-electric-yellow" />
                 <span>{badge.text}</span>
               </div>
             ))}

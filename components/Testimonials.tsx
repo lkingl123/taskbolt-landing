@@ -124,15 +124,12 @@ export default function Testimonials() {
               </div>
 
               {/* Author Info */}
-              <div className="flex items-center gap-4 pt-6 border-t border-navy-700">
-                <div className="text-4xl">{testimonial.image}</div>
-                <div>
-                  <div className="font-bold text-white">{testimonial.name}</div>
-                  <div className="text-sm text-gray-400">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
-                  <div className="text-sm text-gray-500">{testimonial.location}</div>
+              <div className="pt-6 border-t border-navy-700">
+                <div className="font-bold text-white">{testimonial.name}</div>
+                <div className="text-sm text-gray-400">
+                  {testimonial.role}, {testimonial.company}
                 </div>
+                <div className="text-sm text-gray-500">{testimonial.location}</div>
               </div>
             </motion.div>
           ))}
