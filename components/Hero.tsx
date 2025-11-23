@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { BoltIcon } from '@heroicons/react/24/solid';
 import { CALENDLY_URL, TRUST_BADGES } from '@/lib/constants';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-6 py-20">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Lightning bolt logo */}
+          {/* TaskBolt logo */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -23,9 +24,21 @@ export default function Hero() {
             className="flex justify-center mb-8"
           >
             <div className="relative">
-              <BoltIcon className="w-24 h-24 text-electric-yellow drop-shadow-lg" />
-              <div className="absolute inset-0 w-24 h-24 animate-ping opacity-20">
-                <BoltIcon className="w-24 h-24 text-electric-yellow" />
+              <Image
+                src="/taskbolt_logo.png"
+                alt="TaskBolt Logo"
+                width={180}
+                height={180}
+                className="drop-shadow-lg"
+                priority
+              />
+              <div className="absolute inset-0 w-[180px] h-[180px] animate-ping opacity-20">
+                <Image
+                  src="/taskbolt_logo.png"
+                  alt="TaskBolt Logo"
+                  width={180}
+                  height={180}
+                />
               </div>
             </div>
           </motion.div>
@@ -86,7 +99,6 @@ export default function Hero() {
           >
             {TRUST_BADGES.slice(0, 3).map((badge, index) => (
               <div key={index} className="flex items-center gap-2">
-                <BoltIcon className="w-5 h-5 text-electric-yellow" />
                 <span>{badge.text}</span>
               </div>
             ))}

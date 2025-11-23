@@ -2,6 +2,7 @@
 
 import { BoltIcon } from '@heroicons/react/24/solid';
 import { COMPANY_NAME, COMPANY_LOCATION, CONTACT_EMAIL } from '@/lib/constants';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <BoltIcon className="w-8 h-8 text-electric-yellow" />
+              <Image
+                src="/taskbolt_logo.png"
+                alt="TaskBolt Logo"
+                width={32}
+                height={32}
+              />
               <span className="text-2xl font-bold text-white">{COMPANY_NAME}</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
