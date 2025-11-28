@@ -27,18 +27,22 @@ export default function Hero() {
               <Image
                 src="/taskbolt_logo.png"
                 alt="TaskBolt Logo"
-                width={120}
-                height={120}
-                className="drop-shadow-lg md:w-[180px] md:h-[180px]"
+                width={180}
+                height={180}
+                quality={100}
+                unoptimized
+                className="w-[120px] h-[120px] md:w-[180px] md:h-[180px] drop-shadow-lg"
                 priority
               />
               <div className="absolute inset-0 w-[120px] h-[120px] md:w-[180px] md:h-[180px] animate-ping opacity-20">
                 <Image
                   src="/taskbolt_logo.png"
                   alt="TaskBolt Logo"
-                  width={120}
-                  height={120}
-                  className="md:w-[180px] md:h-[180px]"
+                  width={180}
+                  height={180}
+                  quality={100}
+                  unoptimized
+                  className="w-full h-full"
                 />
               </div>
             </div>
