@@ -127,8 +127,8 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold text-white mb-4">Intellectual Property</h2>
             <p className="text-gray-300 leading-relaxed">
               All content, features, and functionality on our website, including but not limited
-              to text, graphics, logos, and software, are the exclusive property of {COMPANY_NAME}
-              and are protected by copyright, trademark, and other intellectual property laws.
+              to text, graphics, logos, and software, are the exclusive property of {COMPANY_NAME} and
+              are protected by copyright, trademark, and other intellectual property laws.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4">
               Custom automations created for your business remain your property upon full payment.
