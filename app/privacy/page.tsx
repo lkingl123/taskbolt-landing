@@ -161,14 +161,22 @@ export default function PrivacyPolicy() {
             </p>
           </section>
 
-          {/* California Residents */}
+          {/* Utah Residents */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">California Privacy Rights</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Utah Privacy Rights</h2>
             <p className="text-gray-300 leading-relaxed">
-              If you are a California resident, you have additional rights under the California
-              Consumer Privacy Act (CCPA), including the right to know what personal information
-              we collect, the right to delete your information, and the right to opt-out of the
-              sale of your information. We do not sell personal information.
+              As a Utah-based business, we comply with the Utah Consumer Privacy Act (UCPA).
+              If you are a Utah resident, you have the following rights:
+            </p>
+            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
+              <li><strong>Access:</strong> Confirm whether we are processing your personal data and access that data</li>
+              <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+              <li><strong>Portability:</strong> Obtain a copy of your data in a portable format</li>
+              <li><strong>Opt-out:</strong> Opt out of targeted advertising, sale of personal data, or profiling</li>
+            </ul>
+            <p className="text-gray-300 leading-relaxed mt-4">
+              We do not sell personal data. To exercise your rights under the UCPA, please contact
+              us using the information provided below. We will respond to your request within 45 days.
             </p>
           </section>
 
