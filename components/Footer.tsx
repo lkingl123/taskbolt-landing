@@ -64,10 +64,10 @@ export default function Footer() {
             © {currentYear} {COMPANY_NAME}. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-electric-blue transition-colors duration-300">
+            <a href="/privacy" className="hover:text-electric-blue transition-colors duration-300">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-electric-blue transition-colors duration-300">
+            <a href="/terms" className="hover:text-electric-blue transition-colors duration-300">
               Terms of Service
             </a>
           </div>
