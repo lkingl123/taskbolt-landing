@@ -68,7 +68,7 @@ const itemVariants = {
 
 function AnimatedConnection({ delay = 0 }: { delay?: number }) {
   return (
-    <div className="relative w-12 h-8 flex items-center justify-center flex-shrink-0">
+    <div className="relative w-12 h-12 flex items-center justify-center flex-shrink-0 -translate-y-2">
       <div className="absolute w-full h-0.5 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 rounded-full" />
       <motion.div
         className="absolute w-2 h-2 rounded-full bg-electric-blue shadow-lg shadow-electric-blue/50"
@@ -205,7 +205,7 @@ export default function Features() {
                 <h3 className="text-lg font-bold text-white mb-1">{automation.title}</h3>
                 <p className="text-sm text-gray-500">{automation.description}</p>
               </div>
-              <div className="relative flex items-center justify-between">
+              <div className="relative flex items-center justify-between -mt-2">
                 <IconNode
                   icon={automation.trigger.icon}
                   label={automation.trigger.label}
