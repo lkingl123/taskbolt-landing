@@ -59,7 +59,7 @@ export default function HowItWorks() {
             >
               {/* Connecting line */}
               {index < steps.length - 1 && (
-                <div className="absolute left-12 md:left-24 top-24 w-0.5 h-24 bg-gradient-to-b from-electric-blue to-transparent hidden md:block"></div>
+                <div className="absolute left-[47px] md:left-[47px] top-24 w-0.5 h-24 bg-gradient-to-b from-electric-blue to-transparent hidden md:block"></div>
               )}
 
               <div className="flex flex-col md:flex-row items-start gap-6">
