@@ -12,6 +12,7 @@ export default function Contact() {
 
   const [formData, setFormData] = useState({
     name: '',
+    companyName: '',
     email: '',
     phone: '',
     service: '',
@@ -38,7 +39,7 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+        setFormData({ name: '', companyName: '', email: '', phone: '', service: '', message: '' });
       } else {
         setSubmitStatus('error');
       }
