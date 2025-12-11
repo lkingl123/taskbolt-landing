@@ -168,6 +168,22 @@ export default function Contact() {
               </div>
 
               <div>
+                <label htmlFor="companyName" className="block text-gray-300 mb-2 text-sm font-medium">
+                  Business Name *
+                </label>
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  required
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors"
+                  placeholder="e.g. Smith Plumbing"
+                />
+              </div>
+
+              <div>
                 <label htmlFor="email" className="block text-gray-300 mb-2 text-sm font-medium">
                   Email *
                 </label>
