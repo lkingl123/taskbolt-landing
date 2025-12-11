@@ -210,13 +210,58 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white focus:border-electric-blue focus:outline-none transition-colors"
                 >
-                  <option value="">Select...</option>
+                  <option value="">Select your business type...</option>
+                  {/* Home Services */}
                   <option value="Plumbing">Plumbing</option>
-                  <option value="HVAC">HVAC</option>
+                  <option value="HVAC">HVAC / Heating & Cooling</option>
                   <option value="Electrical">Electrical</option>
-                  <option value="Landscaping">Landscaping</option>
-                  <option value="Cleaning">Cleaning</option>
+                  <option value="Roofing">Roofing</option>
+                  <option value="General Contractor">General Contractor</option>
+                  <option value="Remodeling">Remodeling / Renovation</option>
+                  <option value="Painting">Painting</option>
+                  <option value="Flooring">Flooring</option>
+                  <option value="Concrete">Concrete / Masonry</option>
+                  <option value="Fencing">Fencing</option>
+                  <option value="Garage Door">Garage Door Services</option>
+                  <option value="Windows & Doors">Windows & Doors</option>
+                  <option value="Foundation Repair">Foundation Repair</option>
+                  <option value="Waterproofing">Waterproofing / Basement</option>
+                  <option value="Insulation">Insulation</option>
+                  <option value="Drywall">Drywall</option>
+                  <option value="Cabinets & Countertops">Cabinets & Countertops</option>
                   <option value="Handyman">Handyman</option>
+                  {/* Outdoor Services */}
+                  <option value="Landscaping">Landscaping</option>
+                  <option value="Lawn Care">Lawn Care / Mowing</option>
+                  <option value="Tree Service">Tree Service</option>
+                  <option value="Irrigation">Irrigation / Sprinklers</option>
+                  <option value="Pool & Spa">Pool & Spa Service</option>
+                  <option value="Paving">Paving / Driveways</option>
+                  <option value="Snow Removal">Snow Removal</option>
+                  <option value="Pressure Washing">Pressure Washing</option>
+                  <option value="Gutter Cleaning">Gutter Cleaning / Repair</option>
+                  <option value="Deck & Patio">Deck & Patio</option>
+                  {/* Cleaning & Maintenance */}
+                  <option value="Cleaning">House Cleaning</option>
+                  <option value="Commercial Cleaning">Commercial / Janitorial</option>
+                  <option value="Carpet Cleaning">Carpet Cleaning</option>
+                  <option value="Window Cleaning">Window Cleaning</option>
+                  <option value="Chimney">Chimney Sweep / Repair</option>
+                  <option value="Septic">Septic Services</option>
+                  {/* Specialty Services */}
+                  <option value="Pest Control">Pest Control</option>
+                  <option value="Appliance Repair">Appliance Repair</option>
+                  <option value="Locksmith">Locksmith</option>
+                  <option value="Security & Alarm">Security & Alarm Systems</option>
+                  <option value="Solar">Solar Installation</option>
+                  <option value="Home Inspection">Home Inspection</option>
+                  <option value="Moving">Moving Services</option>
+                  <option value="Junk Removal">Junk Removal</option>
+                  {/* Auto & Vehicle */}
+                  <option value="Auto Repair">Auto Repair / Mechanic</option>
+                  <option value="Auto Detailing">Auto Detailing</option>
+                  <option value="Towing">Towing</option>
+                  {/* Other */}
                   <option value="Other">Other Service Business</option>
                 </select>
               </div>
