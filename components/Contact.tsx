@@ -321,7 +321,7 @@ export default function Contact() {
             className="mt-12 text-center"
           >
             <div className="flex flex-wrap items-center justify-center gap-8 text-gray-400">
-              {[TRUST_BADGES[0], TRUST_BADGES[3], TRUST_BADGES[4]].map((badge, index) => (
+              {TRUST_BADGES.slice(0, 3).map((badge, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <BoltIcon className="w-5 h-5 text-electric-yellow" />
                   <span>{badge.text}</span>
