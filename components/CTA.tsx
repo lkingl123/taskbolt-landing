@@ -47,15 +47,11 @@ export default function CTA() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8"
+            className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 max-w-2xl mx-auto"
           >
             <div className="bg-navy-900/30 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-navy-900">
               <div className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">{STATS.hoursSaved}</div>
               <div className="text-sm md:text-base text-navy-900 opacity-90">Hours Saved Per Week</div>
-            </div>
-            <div className="bg-navy-900/30 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-navy-900">
-              <div className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">{STATS.setupTime}</div>
-              <div className="text-sm md:text-base text-navy-900 opacity-90">Setup Time</div>
             </div>
             <div className="bg-navy-900/30 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-navy-900">
               <div className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">{STATS.leadsCaptured}</div>
