@@ -12,11 +12,11 @@ export default function Contact() {
 
   const [formData, setFormData] = useState({
     name: '',
-    companyName: '',
+    company_name: '',
     email: '',
     phone: '',
-    service: '',
-    message: ''
+    business_type: '',
+    pain_point: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -32,14 +32,14 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          source: 'Website Contact Form',
-          priority: 'High'
+          source: 'landing_page',
+          status: 'new'
         })
       });
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', companyName: '', email: '', phone: '', service: '', message: '' });
+        setFormData({ name: '', company_name: '', email: '', phone: '', business_type: '', pain_point: '' });
       } else {
         setSubmitStatus('error');
       }
@@ -168,15 +168,15 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="companyName" className="block text-gray-300 mb-2 text-sm font-medium">
+                <label htmlFor="company_name" className="block text-gray-300 mb-2 text-sm font-medium">
                   Business Name *
                 </label>
                 <input
                   type="text"
-                  id="companyName"
-                  name="companyName"
+                  id="company_name"
+                  name="company_name"
                   required
-                  value={formData.companyName}
+                  value={formData.company_name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors"
                   placeholder="e.g. Smith Plumbing"
@@ -216,14 +216,14 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-gray-300 mb-2 text-sm font-medium">
+                <label htmlFor="business_type" className="block text-gray-300 mb-2 text-sm font-medium">
                   Type of Business *
                 </label>
                 <select
-                  id="service"
-                  name="service"
+                  id="business_type"
+                  name="business_type"
                   required
-                  value={formData.service}
+                  value={formData.business_type}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white focus:border-electric-blue focus:outline-none transition-colors"
                 >
@@ -284,14 +284,14 @@ export default function Contact() {
               </div>
 
               <div className="md:col-span-2">
-                <label htmlFor="message" className="block text-gray-300 mb-2 text-sm font-medium">
+                <label htmlFor="pain_point" className="block text-gray-300 mb-2 text-sm font-medium">
                   Tell us about your business
                 </label>
                 <textarea
-                  id="message"
-                  name="message"
+                  id="pain_point"
+                  name="pain_point"
                   rows={4}
-                  value={formData.message}
+                  value={formData.pain_point}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors resize-none"
                   placeholder="What automation challenges are you facing?"
