@@ -35,11 +35,11 @@ export default function CTA() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-navy-900">
-            Ready to Automate Your Business?
+            Ready to Run Your Business Like a Pro?
           </h2>
 
           <p className="text-xl md:text-2xl text-navy-900 mb-10 opacity-90">
-            Join service businesses saving 10+ hours per week with TaskBolt automation.
+            Join service businesses saving 10+ hours per week with TaskBolt.
           </p>
 
           {/* Stats */}

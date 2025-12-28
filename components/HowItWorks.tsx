@@ -7,23 +7,23 @@ import { useRef } from 'react';
 const steps = [
   {
     number: '01',
-    title: 'Free Audit',
-    description: 'We analyze your current workflow and identify automation opportunities that will save you time and money.',
+    title: 'Discovery Call',
+    description: 'We learn about your business, pain points, and goals. What\'s eating your time? Where are leads slipping through?',
   },
   {
     number: '02',
     title: 'Custom Setup',
-    description: 'We build and configure your automation system tailored specifically to your business needs.',
+    description: 'We build your CRM, client portal, and automation workflows tailored to how you actually work.',
   },
   {
     number: '03',
     title: 'Go Live',
-    description: 'Your automation goes live in 24 hours. Start capturing leads and saving time immediately.',
+    description: 'Your complete system goes live. Track leads, manage projects, and delight clients from day one.',
   },
   {
     number: '04',
-    title: 'Ongoing Support',
-    description: 'We monitor, optimize, and support your automation so it keeps working perfectly.',
+    title: 'Ongoing Partnership',
+    description: 'We don\'t disappear after launch. Unlimited support, updates, and optimization included.',
   },
 ];
 
