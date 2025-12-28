@@ -6,7 +6,7 @@ export const N8N_WEBHOOK_URL = 'https://jakelokeai.app.n8n.cloud/webhook/lead-ca
 // Company Info
 export const COMPANY_NAME = 'TaskBolt';
 export const COMPANY_LOCATION = 'Utah';
-export const COMPANY_TAGLINE = 'Lightning-Fast Automation for Service Businesses';
+export const COMPANY_TAGLINE = 'Your Complete Business Operations Partner';
 
 // Trust Indicators
 export const TRUST_BADGES = [
@@ -36,9 +36,9 @@ export const SOCIAL_LINKS = {
 
 // SEO
 export const SEO = {
-  title: 'TaskBolt - Lightning-Fast Automation for Service Businesses',
-  description: 'Stop losing money to missed calls and forgotten follow-ups. TaskBolt automates your busiest tasks so you can focus on the job. Unlimited support included.',
-  keywords: 'automation, service business, plumbing automation, HVAC automation, contractor automation, lead capture, appointment scheduling, business automation, workflow automation',
+  title: 'TaskBolt - Business Operations, Automation & CRM for Service Businesses',
+  description: 'Complete business solutions: CRM, project management, client portals, and automation. We handle your operations so you can focus on what you do best.',
+  keywords: 'business operations, CRM, project management, client portal, automation, service business, lead management, workflow automation, business software',
   ogImage: '/og-image.jpg', // You'll need to create this
   twitterHandle: '@taskbolt',
   siteUrl: 'https://taskbolt.work',

@@ -4,43 +4,40 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  SiGmail,
-  SiGooglecalendar,
-  SiStripe,
-  SiQuickbooks,
-  SiSlack,
-  SiTwilio,
-  SiGoogle
-} from 'react-icons/si';
+  UserGroupIcon,
+  ClipboardDocumentListIcon,
+  BoltIcon,
+  BuildingOfficeIcon,
+} from '@heroicons/react/24/outline';
 
-const automations = [
+const services = [
   {
-    title: 'Lead Capture',
-    description: 'Never miss a lead again',
-    trigger: { icon: SiTwilio, label: 'Twilio', color: '#F22F46' },
-    action: { icon: SiGmail, label: 'Gmail', color: '#EA4335' },
-    result: { icon: SiGooglecalendar, label: 'Calendar', color: '#4285F4' },
+    title: 'CRM & Lead Management',
+    description: 'Track every lead from first contact to closed deal',
+    icon: UserGroupIcon,
+    color: '#F59E0B',
+    features: ['Pipeline tracking', 'Lead scoring', 'Follow-up reminders', 'Contact history'],
   },
   {
-    title: 'Team Alerts',
-    description: 'Keep everyone in the loop',
-    trigger: { icon: SiGmail, label: 'Gmail', color: '#EA4335' },
-    action: { icon: SiSlack, label: 'Slack', color: '#611f69' },
-    result: { icon: SiGooglecalendar, label: 'Calendar', color: '#4285F4' },
+    title: 'Project Management',
+    description: 'Keep projects on track with visual workflows',
+    icon: ClipboardDocumentListIcon,
+    color: '#3B82F6',
+    features: ['Project stages', 'Deliverable tracking', 'Client updates', 'Team collaboration'],
   },
   {
-    title: 'Payments',
-    description: 'Automate your finances',
-    trigger: { icon: SiStripe, label: 'Stripe', color: '#635BFF' },
-    action: { icon: SiGmail, label: 'Gmail', color: '#EA4335' },
-    result: { icon: SiQuickbooks, label: 'QuickBooks', color: '#2CA01C' },
+    title: 'Client Portal',
+    description: 'Give clients a professional experience',
+    icon: BuildingOfficeIcon,
+    color: '#10B981',
+    features: ['Branded portal', 'Document signing', 'Payment integration', 'Real-time updates'],
   },
   {
-    title: 'Reviews',
-    description: 'Build your reputation',
-    trigger: { icon: SiTwilio, label: 'Twilio', color: '#F22F46' },
-    action: { icon: SiGoogle, label: 'Google', color: '#4285F4' },
-    result: { icon: SiSlack, label: 'Slack', color: '#611f69' },
+    title: 'Workflow Automation',
+    description: 'Automate repetitive tasks and save hours',
+    icon: BoltIcon,
+    color: '#8B5CF6',
+    features: ['Email sequences', 'Lead capture', 'Invoice reminders', 'Custom workflows'],
   },
 ];
 
@@ -48,7 +45,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -65,91 +62,6 @@ const itemVariants = {
     },
   },
 };
-
-function AnimatedConnection({ delay = 0 }: { delay?: number }) {
-  return (
-    <div className="relative w-12 h-12 flex items-center justify-center flex-shrink-0 -translate-y-2">
-      <div className="absolute w-full h-0.5 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 rounded-full" />
-      <motion.div
-        className="absolute w-2 h-2 rounded-full bg-electric-blue shadow-lg shadow-electric-blue/50"
-        initial={{ x: -20, opacity: 0 }}
-        animate={{
-          x: [-20, 20],
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          delay: delay,
-          ease: 'easeInOut',
-        }}
-      />
-      <motion.div
-        className="absolute w-4 h-1 rounded-full bg-electric-blue/30 blur-sm"
-        initial={{ x: -20, opacity: 0 }}
-        animate={{
-          x: [-20, 20],
-          opacity: [0, 0.5, 0.5, 0],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          delay: delay,
-          ease: 'easeInOut',
-        }}
-      />
-    </div>
-  );
-}
-
-function IconNode({
-  icon: Icon,
-  label,
-  color,
-  delay = 0
-}: {
-  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
-  label: string;
-  color: string;
-  delay?: number;
-}) {
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative flex items-center justify-center">
-        <motion.div
-          className="absolute inset-0 m-auto w-14 h-14 rounded-xl"
-          style={{ backgroundColor: color }}
-          initial={{ opacity: 0, scale: 1 }}
-          animate={{
-            opacity: [0, 0.2, 0],
-            scale: [1, 1.4, 1.6],
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            delay: delay,
-            ease: 'easeOut',
-          }}
-        />
-        <motion.div
-          className="relative p-3.5 rounded-xl border-2 transition-all duration-300 cursor-pointer"
-          style={{
-            backgroundColor: `${color}15`,
-            borderColor: `${color}40`,
-          }}
-          whileHover={{
-            scale: 1.1,
-            borderColor: color,
-            boxShadow: `0 0 25px ${color}50`,
-          }}
-        >
-          <Icon className="w-7 h-7" style={{ color: color }} />
-        </motion.div>
-      </div>
-      <span className="text-xs text-gray-300 font-medium tracking-wide">{label}</span>
-    </div>
-  );
-}
 
 export default function Features() {
   const ref = useRef(null);
@@ -178,13 +90,13 @@ export default function Features() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-blue/10 border border-electric-blue/30 mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-electric-blue animate-pulse" />
-            <span className="text-sm text-electric-blue font-medium">Live Automation</span>
+            <span className="text-sm text-electric-blue font-medium">Complete Solution</span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What We <span className="text-electric-blue">Automate</span>
+            Everything You Need to <span className="text-electric-blue">Grow</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Your tools, connected and working 24/7
+            One platform for all your business operations
           </p>
         </motion.div>
         <motion.div
@@ -193,50 +105,46 @@ export default function Features() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
         >
-          {automations.map((automation, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="group relative bg-gradient-to-br from-navy-900 to-navy-900/50 p-8 rounded-2xl border border-navy-700/50 hover:border-electric-blue/50 transition-all duration-500"
-              whileHover={{ y: -5 }}
-            >
-              <div className="absolute inset-0 rounded-2xl bg-electric-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative mb-6">
-                <h3 className="text-lg font-bold text-white mb-1">{automation.title}</h3>
-                <p className="text-sm text-gray-500">{automation.description}</p>
-              </div>
-              <div className="relative flex items-center justify-between -mt-2">
-                <IconNode
-                  icon={automation.trigger.icon}
-                  label={automation.trigger.label}
-                  color={automation.trigger.color}
-                  delay={index * 0.3}
-                />
-                <AnimatedConnection delay={index * 0.3} />
-                <IconNode
-                  icon={automation.action.icon}
-                  label={automation.action.label}
-                  color={automation.action.color}
-                  delay={index * 0.3 + 0.5}
-                />
-                <AnimatedConnection delay={index * 0.3 + 0.5} />
-                <IconNode
-                  icon={automation.result.icon}
-                  label={automation.result.label}
-                  color={automation.result.color}
-                  delay={index * 0.3 + 1}
-                />
-              </div>
-              <div className="absolute top-6 right-6 flex items-center gap-2">
-                <motion.div
-                  className="w-2 h-2 rounded-full bg-green-500"
-                  animate={{ opacity: [1, 0.5, 1], scale: [1, 0.9, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
-                />
-                <span className="text-xs text-green-500 font-medium">Active</span>
-              </div>
-            </motion.div>
-          ))}
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="group relative bg-gradient-to-br from-navy-900 to-navy-900/50 p-8 rounded-2xl border border-navy-700/50 hover:border-electric-blue/50 transition-all duration-500"
+                whileHover={{ y: -5 }}
+              >
+                <div className="absolute inset-0 rounded-2xl bg-electric-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Icon and Title */}
+                <div className="relative flex items-start gap-4 mb-4">
+                  <div
+                    className="p-3 rounded-xl"
+                    style={{ backgroundColor: `${service.color}20` }}
+                  >
+                    <Icon className="w-8 h-8" style={{ color: service.color }} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
+                    <p className="text-sm text-gray-400">{service.description}</p>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <div className="relative grid grid-cols-2 gap-2 mt-4">
+                  {service.features.map((feature, fIndex) => (
+                    <div key={fIndex} className="flex items-center gap-2 text-sm text-gray-300">
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: service.color }}
+                      />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
