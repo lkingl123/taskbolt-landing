@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="text-2xl font-bold text-white">{COMPANY_NAME}</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Lightning-fast automation for service businesses. Never miss a lead, forget a follow-up, or lose track of payments.
+              Complete business operations for service professionals. CRM, project management, client portals, and automation - all in one place.
             </p>
           </div>
 
