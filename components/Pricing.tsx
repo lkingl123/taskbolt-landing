@@ -11,12 +11,12 @@ const packages = [
     name: 'Starter',
     setup: '$497',
     monthly: '$97',
-    description: 'Essential automation for solo operators',
+    description: 'Perfect for getting started with automation',
     features: [
-      'Lead capture forms',
-      'Auto-response emails',
-      'Basic follow-up sequences',
+      'Lead capture & auto-response',
+      'Email follow-up sequences',
       'Payment reminders',
+      'Up to 3 automations',
       'Unlimited support',
       '48hr response time',
     ],
@@ -26,44 +26,29 @@ const packages = [
     name: 'Growth',
     setup: '$997',
     monthly: '$197',
-    description: 'Full automation for growing businesses',
+    description: 'Full automation for serious businesses',
     features: [
       'Everything in Starter',
       'SMS + email automation',
-      'Multi-step workflows',
+      'Unlimited automations',
+      'Calendar & booking integration',
       'Review request automation',
-      'Calendar integration',
-      'Priority support',
+      'Priority same-day support',
     ],
     popular: true,
   },
   {
-    name: 'Pro',
-    setup: '$1,997',
-    monthly: '$297',
-    description: 'Advanced automation for busy teams',
+    name: 'Custom',
+    setup: "Let's Talk",
+    monthly: "Let's Talk",
+    description: 'Complex needs? We\'ll build it.',
     features: [
       'Everything in Growth',
       'Custom integrations',
-      'Complex workflows',
-      'Dedicated account manager',
-      'Weekly strategy calls',
-      'Same-day support',
-    ],
-    popular: false,
-  },
-  {
-    name: 'Custom',
-    setup: 'Custom',
-    monthly: 'Custom',
-    description: 'Tailored solutions for unique needs',
-    features: [
-      'Everything in Pro',
-      'Custom development',
-      'API integrations',
       'Multi-location support',
-      'Custom reporting',
-      'On-demand support',
+      'API connections',
+      'Dedicated account manager',
+      'White-glove onboarding',
     ],
     popular: false,
     isCustom: true,
@@ -95,7 +80,7 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
