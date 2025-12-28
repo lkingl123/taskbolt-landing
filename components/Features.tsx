@@ -4,40 +4,40 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  UserGroupIcon,
-  ClipboardDocumentListIcon,
+  ChatBubbleLeftRightIcon,
+  CurrencyDollarIcon,
   BoltIcon,
-  BuildingOfficeIcon,
+  CalendarDaysIcon,
 } from '@heroicons/react/24/outline';
 
 const services = [
   {
-    title: 'CRM & Lead Management',
-    description: 'Track every lead from first contact to closed deal',
-    icon: UserGroupIcon,
+    title: 'Lead Capture & Response',
+    description: 'Never miss a lead even when you\'re on the job',
+    icon: ChatBubbleLeftRightIcon,
     color: '#F59E0B',
-    features: ['Pipeline tracking', 'Lead scoring', 'Follow-up reminders', 'Contact history'],
+    features: ['Instant text/email response', 'Web form capture', 'After-hours handling', 'Lead qualification'],
   },
   {
-    title: 'Project Management',
-    description: 'Keep projects on track with visual workflows',
-    icon: ClipboardDocumentListIcon,
+    title: 'Automated Follow-Ups',
+    description: 'Stay top of mind without lifting a finger',
+    icon: CalendarDaysIcon,
     color: '#3B82F6',
-    features: ['Project stages', 'Deliverable tracking', 'Client updates', 'Team collaboration'],
+    features: ['Email sequences', 'SMS reminders', 'Quote follow-ups', 'Review requests'],
   },
   {
-    title: 'Client Portal',
-    description: 'Give clients a professional experience',
-    icon: BuildingOfficeIcon,
+    title: 'Payment Automation',
+    description: 'Get paid faster with automatic reminders',
+    icon: CurrencyDollarIcon,
     color: '#10B981',
-    features: ['Branded portal', 'Document signing', 'Payment integration', 'Real-time updates'],
+    features: ['Invoice reminders', 'Payment links', 'Overdue alerts', 'Receipt automation'],
   },
   {
-    title: 'Workflow Automation',
-    description: 'Automate repetitive tasks and save hours',
+    title: 'Custom Workflows',
+    description: 'Automate any repetitive task in your business',
     icon: BoltIcon,
     color: '#8B5CF6',
-    features: ['Email sequences', 'Lead capture', 'Invoice reminders', 'Custom workflows'],
+    features: ['Job scheduling', 'Status updates', 'Document sending', 'Any integration'],
   },
 ];
 
@@ -90,13 +90,13 @@ export default function Features() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-blue/10 border border-electric-blue/30 mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-electric-blue animate-pulse" />
-            <span className="text-sm text-electric-blue font-medium">Complete Solution</span>
+            <span className="text-sm text-electric-blue font-medium">Automation That Works</span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Everything You Need to <span className="text-electric-blue">Grow</span>
+            Your Business on <span className="text-electric-blue">Autopilot</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            One platform for all your business operations
+            We build custom automation so you can focus on the work, not the busywork
           </p>
         </motion.div>
         <motion.div

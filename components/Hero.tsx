@@ -55,8 +55,8 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight px-2"
           >
-            Run Your Business{' '}
-            <span className="text-electric-yellow">Like a Pro</span>
+            Never Miss Another Lead{' '}
+            <span className="text-electric-yellow">While You're on the Job</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -66,8 +66,8 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto px-2"
           >
-            CRM, project management, client portals, and automation - all in one place.
-            We handle your operations so you can focus on what you do best.
+            Automated lead capture, instant follow-ups, and payment reminders.
+            We build the systems that run your business while you work.
           </motion.p>
 
           {/* CTA Buttons */}

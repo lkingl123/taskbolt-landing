@@ -7,28 +7,28 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const faqs = [
   {
-    question: 'What exactly is included with TaskBolt?',
-    answer: 'A complete business operations system: CRM for tracking leads, project management to keep work organized, client portals for a professional experience, and automation to eliminate repetitive tasks.',
+    question: 'How quickly can you set this up?',
+    answer: 'Most clients are live within 24-48 hours. We handle all the technical setup - you just tell us what you need automated.',
   },
   {
-    question: 'How quickly can you set this up?',
-    answer: 'Most clients are fully live within 1-2 weeks. We handle all the technical setup, data migration, and training.',
+    question: 'What if something breaks?',
+    answer: 'Unlimited fixes included in every plan. We typically resolve issues within hours, not days.',
   },
   {
     question: 'Do I need technical skills?',
-    answer: 'No. We handle 100% of the setup and customization. If you can use a smartphone, you can use TaskBolt.',
+    answer: 'No. We handle 100% of the setup. If you can use a smartphone, you can use the results of our automation.',
   },
   {
-    question: 'What if something breaks or I need changes?',
-    answer: 'Unlimited fixes and adjustments included in every plan. We typically resolve issues within hours, not days.',
+    question: 'What tools do you integrate with?',
+    answer: 'Google Calendar, Gmail, Stripe, QuickBooks, most CRMs, and hundreds more. If it has an API, we can probably connect it.',
   },
   {
-    question: 'Can my clients access the portal?',
-    answer: 'Yes! Your clients get their own branded portal to view project updates, sign contracts, pay invoices, and communicate with you.',
+    question: 'Can I cancel anytime?',
+    answer: 'Yes. No long-term contracts, no cancellation fees. 30 days notice.',
   },
   {
     question: 'What happens on the free call?',
-    answer: '15 minutes to understand your business and identify where TaskBolt can save you time. You\'ll leave with actionable insights even if you decide not to sign up.',
+    answer: '15 minutes to identify where automation can save you the most time. You\'ll leave with actionable insights even if you decide not to sign up.',
   },
 ];
 

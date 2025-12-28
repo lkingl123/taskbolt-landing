@@ -12,7 +12,7 @@ const testimonials = [
     company: 'Plumbing Company',
     image: '👨‍🔧',
     rating: 5,
-    text: "The CRM tracks every lead from first contact to closed deal. I can see my whole pipeline at a glance and never forget a follow-up. TaskBolt changed how I run my business.",
+    text: "I was losing leads because I couldn't answer my phone while working. Now every lead gets an instant response and automatic follow-ups. Haven't missed one since.",
     results: 'Captured 40% more leads',
   },
   {
@@ -21,7 +21,7 @@ const testimonials = [
     company: 'Cleaning Services',
     image: '👩‍💼',
     rating: 5,
-    text: "The client portal is a game-changer. My clients can see project updates, sign contracts, and pay invoices all in one place. They love the professional experience.",
+    text: "I spent 2 hours every evening responding to messages and scheduling. Now it's all automated. I actually have time to grow my business instead of just running it.",
     results: 'Saves 12 hours per week',
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
     company: 'HVAC Company',
     image: '👨‍💻',
     rating: 5,
-    text: "Project management + automated payment reminders took us from chaos to organized. Payment collection went from 70% to 95%. Everything is in one system now.",
+    text: "Payment collection went from 70% to 95% just from the automated reminders. They handled everything from setup to training. Best investment we've made.",
     results: '95% payment collection',
   },
 ];
@@ -54,7 +54,7 @@ export default function Testimonials() {
             What Our <span className="text-electric-blue">Clients Say</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Service businesses running smarter with complete operations management
+            Service businesses saving time and capturing more leads with automation
           </p>
         </motion.div>
 
