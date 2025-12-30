@@ -211,7 +211,7 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:border-electric-blue focus:outline-none transition-colors"
-                  placeholder="(555) 123-4567"
+                  placeholder="5551234567"
                 />
               </div>
 
