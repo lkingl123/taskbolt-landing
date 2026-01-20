@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
               <li><strong>Google Workspace</strong> - Gmail, Google Calendar integration</li>
               <li><strong>Slack</strong> - Team notifications</li>
               <li><strong>QuickBooks</strong> - Accounting integration</li>
-              <li><strong>Calendly</strong> - Appointment scheduling</li>
+              <li><strong>Cal.com</strong> - Appointment scheduling</li>
               <li><strong>n8n</strong> - Workflow automation</li>
             </ul>
             <p className="text-gray-300 leading-relaxed mt-4">
