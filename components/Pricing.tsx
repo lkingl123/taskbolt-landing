@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { CheckIcon } from '@heroicons/react/24/solid';
-import { CALENDLY_URL } from '@/lib/constants';
+import { CAL_URL } from '@/lib/constants';
 
 const packages = [
   {
@@ -120,7 +120,7 @@ export default function Pricing() {
               </div>
 
               <a
-                href={CALENDLY_URL}
+                href={CAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full py-4 px-6 rounded-lg font-bold text-center transition-all duration-300 mb-8 ${

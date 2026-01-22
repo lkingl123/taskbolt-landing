@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { BoltIcon, CalendarIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
-import { CALENDLY_URL, CONTACT_EMAIL, N8N_WEBHOOK_URL, RESPONSE_TIME, BUSINESS_HOURS, COMPANY_LOCATION, TRUST_BADGES } from '@/lib/constants';
+import { CAL_URL, CONTACT_EMAIL, LEAD_CAPTURE_URL, RESPONSE_TIME, BUSINESS_HOURS, COMPANY_LOCATION, TRUST_BADGES } from '@/lib/constants';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -27,7 +27,7 @@ export default function Contact() {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch(N8N_WEBHOOK_URL, {
+      const response = await fetch(LEAD_CAPTURE_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -83,7 +83,7 @@ export default function Contact() {
           {/* Contact methods */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <a
-              href={CALENDLY_URL}
+              href={CAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-navy-900 p-6 rounded-xl border border-electric-blue hover:border-electric-yellow transition-all duration-300 group"

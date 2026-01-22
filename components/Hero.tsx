@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { BoltIcon } from '@heroicons/react/24/solid';
-import { CALENDLY_URL, TRUST_BADGES } from '@/lib/constants';
+import { CAL_URL, TRUST_BADGES } from '@/lib/constants';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -78,7 +78,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <a
-              href={CALENDLY_URL}
+              href={CAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-full sm:w-auto px-6 md:px-8 py-4 bg-electric-blue text-navy-900 font-bold rounded-lg text-base md:text-lg hover:bg-electric-yellow transition-all duration-300 transform hover:scale-105 glow-electric hover:glow-yellow text-center"

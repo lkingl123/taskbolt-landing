@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { BoltIcon } from '@heroicons/react/24/solid';
-import { CALENDLY_URL, STATS } from '@/lib/constants';
+import { CAL_URL, STATS } from '@/lib/constants';
 
 export default function CTA() {
   const ref = useRef(null);
@@ -67,7 +67,7 @@ export default function CTA() {
             className="mt-12 text-center"
           >
             <a
-              href={CALENDLY_URL}
+              href={CAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-12 py-6 bg-navy-900 text-electric-yellow font-bold rounded-lg text-xl hover:bg-navy-800 transition-all duration-300 transform hover:scale-105 shadow-2xl"

@@ -3,7 +3,7 @@ export const CAL_URL = 'https://cal.com/taskbolt/15min';
 /** @deprecated Use CAL_URL instead */
 export const CALENDLY_URL = CAL_URL;
 export const CONTACT_EMAIL = 'jake@taskbolt.work';
-export const N8N_WEBHOOK_URL = 'https://jakelokeai.app.n8n.cloud/webhook/lead-capture';
+export const LEAD_CAPTURE_URL = 'https://app.taskbolt.work/api/lead-capture';
 
 // Company Info
 export const COMPANY_NAME = 'TaskBolt';
