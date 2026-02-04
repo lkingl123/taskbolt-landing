@@ -26,18 +26,29 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    try {
-      const response = await fetch(LEAD_CAPTURE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          source: 'landing_page',
-          status: 'new'
-        })
-      });
+    const payload = {
+      ...formData,
+      source: 'landing_page',
+      status: 'new'
+    };
 
-      if (response.ok) {
+    try {
+      // Send to both DEV and PROD APIs in parallel
+      const [prodResponse] = await Promise.all([
+        fetch(LEAD_CAPTURE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }),
+        // Also send to DEV for testing (fire and forget - don't fail if DEV fails)
+        fetch('https://dev.taskbolt.work/api/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {})
+      ]);
+
+      if (prodResponse.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', company_name: '', email: '', phone: '', business_type: '', pain_point: '' });
       } else {
