@@ -2,13 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { BoltIcon } from '@heroicons/react/24/solid';
-import { CAL_URL, TRUST_BADGES } from '@/lib/constants';
+import { CAL_URL, TRUST_BADGES, CONTACT_PHONE_E164, CONTACT_PHONE_DISPLAY } from '@/lib/constants';
 import Image from 'next/image';
 
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900">
-      {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-electric-blue opacity-10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-yellow opacity-10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -16,7 +19,6 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20">
         <div className="text-center max-w-5xl mx-auto">
-          {/* TaskBolt logo */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -48,7 +50,6 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +60,6 @@ export default function Hero() {
             <span className="text-electric-yellow">While You're on the Job</span>
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,6 @@ export default function Hero() {
             We build the systems that run your business while you work.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,6 +93,153 @@ export default function Hero() {
               View Pricing
             </a>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-gray-400 mb-20 md:mb-0"
+          >
+            {TRUST_BADGES.slice(0, 3).map((badge, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <BoltIcon className="w-5 h-5 text-electric-yellow" />
+                <span className="text-sm md:text-base">{badge.text}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 hidden md:flex"
+      >
+        <div className="flex flex-col items-center gap-2 text-gray-400">
+          <span className="text-sm">Scroll to explore</span>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </motion.div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// =====================================================================
+export default function Hero() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-electric-blue opacity-10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric-yellow opacity-10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20">
+        <div className="text-center max-w-5xl mx-auto">
+          {/* TaskBolt logo */}
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.6, type: 'spring' }}
+            className="flex justify-center mb-6 md:mb-8"
+          >
+            {/* Logo (the ping animation duplicate was removed for a cleaner, less busy hero) */}
+            <Image
+              src="/taskbolt_logo.png"
+              alt="TaskBolt Logo"
+              width={180}
+              height={180}
+              quality={100}
+              unoptimized
+              className="w-[120px] h-[120px] md:w-[180px] md:h-[180px] drop-shadow-lg"
+              priority
+              loading="eager"
+              fetchPriority="high"
+            />
+          </motion.div>
+
+          {/* Local-Utah pill */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-yellow/10 border border-electric-yellow/30 mb-6"
+          >
+            <span className="w-2 h-2 rounded-full bg-electric-yellow animate-pulse" />
+            <span className="text-sm text-electric-yellow font-medium">Based in West Jordan, Utah. Pickup available.</span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight px-2"
+          >
+            The orders pile up.{' '}
+            <span className="text-electric-yellow">We make them go away.</span>
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto px-2"
+          >
+            Packing, assembly, kitting, prep. We pick it up, finish the job, bring it back.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
+          >
+            <a
+              href={CAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-full sm:w-auto px-6 md:px-8 py-4 bg-electric-blue text-white font-bold rounded-lg text-base md:text-lg hover:brightness-110 transition-all duration-300 transform hover:scale-105 glow-electric text-center"
+            >
+              Schedule a 30-Min Call
+            </a>
+
+            <a
+              href="#how-it-works"
+              className="w-full sm:w-auto px-6 md:px-8 py-4 border-2 border-electric-blue text-electric-blue font-bold rounded-lg text-base md:text-lg hover:bg-electric-blue hover:text-navy-900 transition-all duration-300 text-center"
+            >
+              See How It Works
+            </a>
+          </motion.div>
+
+          {/* Call us — small but clear "phone is an option" line under the CTAs */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="mt-6 text-gray-400 text-sm md:text-base"
+          >
+            Or call us directly:{' '}
+            <a
+              href={`tel:${CONTACT_PHONE_E164}`}
+              className="text-electric-blue font-semibold hover:text-electric-yellow transition-colors"
+            >
+              {CONTACT_PHONE_DISPLAY}
+            </a>
+          </motion.p>
 
           {/* Trust indicators */}
           <motion.div

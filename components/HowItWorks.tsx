@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const steps = [
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
+const steps_OLD = [
   {
     number: '01',
     title: 'Free Audit Call',
@@ -26,6 +30,33 @@ const steps = [
     description: 'We don\'t disappear after launch. Need changes? Want new automations? Unlimited support included.',
   },
 ];
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// =====================================================================
+const steps = [
+  {
+    number: '01',
+    title: "You're Swamped",
+    description: "Tell us what's piling up. Call, email, or book a 30-minute chat. We'll figure out the scope together and quote it on the spot.",
+  },
+  {
+    number: '02',
+    title: 'We Come Pick It Up',
+    description: "We drive out to you anywhere in the Salt Lake Valley or nearby. You hand off the work and instructions. Small-batch jobs that fit in a car (no pallets). In and out in 15 minutes.",
+  },
+  {
+    number: '03',
+    title: 'We Get It Done',
+    description: 'At our shop, on your timeline, by your deadline. Most jobs turn around in 24 to 72 hours. Rush available when you really need it.',
+  },
+  {
+    number: '04',
+    title: 'We Drop It Back',
+    description: 'Finished work delivered right back to your door. You take it from there. Ship to your customers, restock your shelves, run your event. Done.',
+  },
+];
 
 export default function HowItWorks() {
   const ref = useRef(null);
@@ -44,7 +75,7 @@ export default function HowItWorks() {
             How It <span className="text-electric-yellow">Works</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Get started with TaskBolt in four simple steps. No technical expertise required.
+            Pretty simple, honestly. We pick up your backlog, get it done, drop it back. Local Utah only.
           </p>
         </motion.div>
 

@@ -4,8 +4,30 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { COMPANY_NAME, CONTACT_EMAIL, COMPANY_LOCATION } from '@/lib/constants';
 
-export default function TermsOfService() {
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
+// (Original SaaS/automation Terms of Service moved here. Referenced
+// monthly retainers, Stripe billing, automation uptime, custom workflow
+// IP, and other SaaS-style terms. Replaced for the local contract labor
+// pivot. See git history for full content.)
+
+export default function TermsOfService_OLD() {
   const lastUpdated = 'November 28, 2025';
+  return (
+    <div className="min-h-screen bg-navy-900">
+      // ... full SaaS terms preserved in git history ...
+    </div>
+  );
+}
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// =====================================================================
+export default function TermsOfService() {
+  const lastUpdated = 'May 10, 2026';
 
   return (
     <div className="min-h-screen bg-navy-900">
@@ -29,36 +51,66 @@ export default function TermsOfService() {
         <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
         <p className="text-gray-400 mb-12">Last updated: {lastUpdated}</p>
 
-        <div className="prose prose-invert prose-lg max-w-none space-y-8">
+        <div className="max-w-none space-y-8">
           {/* Agreement */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Agreement to Terms</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Agreement</h2>
             <p className="text-gray-300 leading-relaxed">
-              By accessing or using the services provided by {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;),
-              you agree to be bound by these Terms of Service. If you do not agree to these terms,
-              please do not use our services.
-            </p>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              These terms apply to all visitors, users, and clients who access or use our website
-              at taskbolt.work and our automation services.
+              These Terms of Service apply when you use the {COMPANY_NAME} website at taskbolt.work or
+              hire {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;) for contract labor services. By using the
+              website or engaging us for work, you agree to these terms.
             </p>
           </section>
 
-          {/* Services */}
+          {/* What we do */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Our Services</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">What We Do</h2>
             <p className="text-gray-300 leading-relaxed">
-              {COMPANY_NAME} provides business automation services designed to help service businesses
-              streamline their operations. Our services include but are not limited to:
+              {COMPANY_NAME} is a Utah-based independent contractor offering hands-on labor services
+              to small businesses. Services may include, but aren&apos;t limited to:
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>Lead capture and follow-up automation</li>
-              <li>Appointment scheduling integration</li>
-              <li>Payment and invoicing automation</li>
-              <li>Team notification systems</li>
-              <li>Customer review collection</li>
-              <li>Custom workflow automation</li>
+              <li>Packaging and order fulfillment</li>
+              <li>Kitting and assembly</li>
+              <li>Tagging, polybagging, and prep work</li>
+              <li>Inventory sorting and organization</li>
+              <li>Local pickup and dropoff of work materials</li>
             </ul>
+            <p className="text-gray-300 leading-relaxed mt-4">
+              We are <strong>not</strong> a 3PL, fulfillment center, or shipping carrier. We do not ship
+              finished work to your customers. We pick up locally, complete the job, and return it to you.
+            </p>
+          </section>
+
+          {/* Scope and Quoting */}
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Scope and Quoting</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Each job is quoted before work begins. The quote will specify:
+            </p>
+            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
+              <li>The work to be performed</li>
+              <li>Pricing model (per-piece, per-project, or hourly)</li>
+              <li>Estimated turnaround time</li>
+              <li>Pickup and dropoff arrangement</li>
+              <li>Payment terms</li>
+            </ul>
+            <p className="text-gray-300 leading-relaxed mt-4">
+              Work that exceeds the quoted scope (different volume, additional steps, materials missing
+              or damaged on arrival) may be re-quoted before continuing. We&apos;ll always communicate before
+              billing more than originally agreed.
+            </p>
+          </section>
+
+          {/* Service Area */}
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Service Area</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We are local to {COMPANY_LOCATION}. We are willing to travel for pickup and dropoff
+              within roughly the Salt Lake Valley and surrounding areas (Utah County, Davis County,
+              Tooele, Park City, etc.). For locations beyond a comfortable drive, we may decline the
+              job or charge a mileage fee disclosed at quote time.
+            </p>
           </section>
 
           {/* Client Responsibilities */}
@@ -66,74 +118,42 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold text-white mb-4">Client Responsibilities</h2>
             <p className="text-gray-300 leading-relaxed">As a client, you agree to:</p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>Provide accurate and complete information when requested</li>
-              <li>Maintain the security of your account credentials for integrated services</li>
-              <li>Use our services in compliance with all applicable laws and regulations</li>
-              <li>Not use our services for any illegal or unauthorized purpose</li>
-              <li>Promptly notify us of any security breaches or unauthorized use</li>
-              <li>Obtain necessary consents for any personal data processed through our automations</li>
+              <li>Provide accurate counts and descriptions of materials/components</li>
+              <li>Have all components ready at the agreed pickup time</li>
+              <li>Provide clear written instructions if assembly or kitting requires it</li>
+              <li>Disclose any handling sensitivities (fragile, perishable, hazardous, valuable)</li>
+              <li>Pay invoices on the agreed schedule</li>
+              <li>Not ask us to do anything unsafe, illegal, or beyond the scope quoted</li>
             </ul>
           </section>
 
-          {/* Third-Party Integrations */}
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Third-Party Integrations</h2>
-            <p className="text-gray-300 leading-relaxed">
-              Our automation services integrate with various third-party platforms (such as Stripe,
-              Twilio, Google Workspace, Slack, QuickBooks, and others). By using our services, you
-              acknowledge that:
-            </p>
-            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>You are responsible for maintaining your own accounts with these third-party services</li>
-              <li>Third-party services are subject to their own terms and conditions</li>
-              <li>We are not responsible for the availability or functionality of third-party services</li>
-              <li>Changes to third-party APIs may affect our automation services</li>
-            </ul>
-          </section>
-
-          {/* Payment Terms */}
+          {/* Payment */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Payment Terms</h2>
-            <p className="text-gray-300 leading-relaxed">
-              For paid services:
-            </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>Fees are as quoted during the consultation and project scoping process</li>
-              <li>Payment is processed securely through Stripe</li>
-              <li>Monthly retainer fees are billed at the beginning of each billing cycle</li>
-              <li>Setup fees are due upon project commencement</li>
-              <li>All fees are non-refundable unless otherwise specified in writing</li>
+              <li>Payment is due per the terms specified in your quote (commonly Net 7 or due on completion)</li>
+              <li>For new clients, we may require a 50% deposit before pickup</li>
+              <li>For larger projects, we may invoice in milestones</li>
+              <li>Payments are processed through Stripe, ACH, Venmo, or similar — agreed at quote time</li>
+              <li>Late payments may incur a 1.5%/month finance charge</li>
             </ul>
           </section>
 
-          {/* Service Level */}
+          {/* Materials and Liability */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Service Delivery</h2>
-            <p className="text-gray-300 leading-relaxed">We commit to:</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Handling of Your Materials</h2>
+            <p className="text-gray-300 leading-relaxed">
+              When you hand off product or components to us:
+            </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>24-48 hour setup for standard automation packages</li>
-              <li>Unlimited fixes and adjustments included with active subscriptions</li>
-              <li>Responsive support during business hours (Mon-Fri, 8am-6pm MT)</li>
-              <li>Reasonable efforts to maintain automation uptime and reliability</li>
+              <li>We treat your materials with reasonable care</li>
+              <li>We verify counts at pickup and at dropoff</li>
+              <li>For high-value items, we may request inventory reconciliation in writing</li>
+              <li>Our liability for any loss or damage caused by our negligence is limited to the wholesale replacement cost of the affected items, capped at the total amount paid to us for that job</li>
+              <li>We are not liable for materials that arrive at pickup damaged, miscounted by you, or unsuitable for the work requested</li>
             </ul>
             <p className="text-gray-300 leading-relaxed mt-4">
-              We do not guarantee 100% uptime as our services depend on third-party platforms.
-              We will work diligently to resolve any issues that arise.
-            </p>
-          </section>
-
-          {/* Intellectual Property */}
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Intellectual Property</h2>
-            <p className="text-gray-300 leading-relaxed">
-              All content, features, and functionality on our website, including but not limited
-              to text, graphics, logos, and software, are the exclusive property of {COMPANY_NAME} and
-              are protected by copyright, trademark, and other intellectual property laws.
-            </p>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              Custom automations created for your business remain your property upon full payment.
-              However, we retain the right to use general automation patterns and techniques
-              developed during our work.
+              Insurance coverage is handled on a job-by-job basis. If your job requires us to carry specific coverage or provide a Certificate of Insurance, mention it at quote time and we will arrange it.
             </p>
           </section>
 
@@ -141,29 +161,29 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Confidentiality</h2>
             <p className="text-gray-300 leading-relaxed">
-              We understand that our services involve access to sensitive business information.
-              We commit to maintaining strict confidentiality regarding:
+              We treat client work as confidential by default. We will not share details of your
+              business, products, customers, or work with anyone outside our team. For sensitive jobs,
+              we&apos;re happy to sign a written NDA before pickup.
             </p>
-            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>Your business processes and workflows</li>
-              <li>Customer and lead information processed through automations</li>
-              <li>Financial information and transaction data</li>
-              <li>Any other proprietary business information</li>
-            </ul>
           </section>
 
-          {/* Limitation of Liability */}
+          {/* Independent Contractor */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Independent Contractor Relationship</h2>
             <p className="text-gray-300 leading-relaxed">
-              To the maximum extent permitted by law, {COMPANY_NAME} shall not be liable for any
-              indirect, incidental, special, consequential, or punitive damages, including but
-              not limited to loss of profits, data, or business opportunities, arising out of
-              or related to your use of our services.
+              {COMPANY_NAME} is an independent contractor — not an employee, agent, partner, or joint
+              venturer of yours. Nothing in our service relationship creates such a relationship.
+              Each party is responsible for its own taxes, insurance, and business expenses.
             </p>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              Our total liability for any claims arising from these terms or our services shall
-              not exceed the amount you paid us in the twelve (12) months preceding the claim.
+          </section>
+
+          {/* Intellectual Property */}
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Your Intellectual Property</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Anything you give us — designs, brand assets, packaging, products, customer lists —
+              remains your property. We make no claim to it and will not use it outside the work
+              you&apos;ve hired us for.
             </p>
           </section>
 
@@ -171,47 +191,37 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Disclaimer of Warranties</h2>
             <p className="text-gray-300 leading-relaxed">
-              Our services are provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind,
-              either express or implied. We do not warrant that our services will be uninterrupted,
-              error-free, or completely secure.
+              We perform the work with reasonable care and skill. Beyond that, our services are
+              provided &quot;as is&quot; without additional warranties, express or implied. We do not
+              guarantee specific business outcomes (sales, customer reactions, etc.) from the work
+              we complete.
+            </p>
+          </section>
+
+          {/* Limitation of Liability */}
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
+            <p className="text-gray-300 leading-relaxed">
+              To the maximum extent permitted by Utah law, {COMPANY_NAME}&apos;s total liability for any
+              claim arising from these terms or our services is limited to the amount you paid us
+              for the specific job giving rise to the claim. We are not liable for indirect,
+              incidental, consequential, or special damages — including lost profits, lost sales,
+              or business interruption.
             </p>
           </section>
 
           {/* Termination */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Termination</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Cancellation and Termination</h2>
             <p className="text-gray-300 leading-relaxed">
-              Either party may terminate the service agreement:
+              Either party may cancel a job before work begins with no penalty (except return of
+              materials). Once work has begun, you are responsible for paying for the work
+              completed up to the point of cancellation, including any non-refundable materials
+              already purchased on your behalf.
             </p>
-            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>At any time with 30 days written notice</li>
-              <li>Immediately if the other party breaches these terms</li>
-              <li>Immediately if required by law</li>
-            </ul>
             <p className="text-gray-300 leading-relaxed mt-4">
-              Upon termination, we will provide reasonable assistance in transitioning your
-              automations, and any outstanding fees will become immediately due.
-            </p>
-          </section>
-
-          {/* No Long-Term Contracts */}
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4">No Long-Term Contracts</h2>
-            <p className="text-gray-300 leading-relaxed">
-              We believe in earning your business every month. Our services operate on a
-              month-to-month basis with no long-term commitments required. You are free to
-              cancel at any time following the termination procedures above.
-            </p>
-          </section>
-
-          {/* Indemnification */}
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Indemnification</h2>
-            <p className="text-gray-300 leading-relaxed">
-              You agree to indemnify and hold harmless {COMPANY_NAME}, its officers, directors,
-              employees, and agents from any claims, damages, losses, or expenses arising out
-              of your use of our services, your violation of these terms, or your violation of
-              any rights of a third party.
+              We may decline or stop work if: a job becomes unsafe, materials are misrepresented,
+              the client behaves abusively, or invoices are unpaid.
             </p>
           </section>
 
@@ -219,30 +229,18 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Governing Law</h2>
             <p className="text-gray-300 leading-relaxed">
-              These Terms of Service shall be governed by and construed in accordance with the
-              laws of the State of Utah, without regard to its conflict of law provisions.
-              Any disputes arising under these terms shall be resolved in the courts of Utah.
+              These terms are governed by the laws of the State of Utah. Any dispute will be
+              resolved in the state or federal courts located in Salt Lake County, Utah.
             </p>
           </section>
 
           {/* Changes */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Changes to Terms</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Changes to These Terms</h2>
             <p className="text-gray-300 leading-relaxed">
-              We reserve the right to modify these terms at any time. We will provide notice of
-              significant changes by updating the &quot;Last updated&quot; date and, for active clients,
-              by email notification. Your continued use of our services after changes constitutes
-              acceptance of the modified terms.
-            </p>
-          </section>
-
-          {/* Satisfaction Guarantee */}
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Satisfaction Guarantee</h2>
-            <p className="text-gray-300 leading-relaxed">
-              We stand behind our work with a 100% satisfaction guarantee. If you&apos;re not satisfied
-              with our automation setup within the first 30 days, we&apos;ll work with you to make it
-              right or provide a full refund of setup fees.
+              We may update these terms over time. The &quot;Last updated&quot; date at the top reflects
+              any changes. For active clients, the terms in effect at the time of your quote govern
+              that engagement.
             </p>
           </section>
 
@@ -250,10 +248,10 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
             <p className="text-gray-300 leading-relaxed">
-              If you have any questions about these Terms of Service, please contact us:
+              Questions about these Terms?
             </p>
             <ul className="list-none text-gray-300 mt-4 space-y-2">
-              <li><strong>Company:</strong> {COMPANY_NAME}</li>
+              <li><strong>Business:</strong> {COMPANY_NAME}</li>
               <li><strong>Location:</strong> {COMPANY_LOCATION}</li>
               <li>
                 <strong>Email:</strong>{' '}

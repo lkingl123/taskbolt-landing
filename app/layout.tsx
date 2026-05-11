@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: SEO.ogImage,
         width: 1200,
         height: 630,
-        alt: "TaskBolt - Lightning-Fast Automation for Service Businesses",
+        alt: "TaskBolt | Local Utah Contract Labor for Small Businesses",
       },
     ],
   },
@@ -55,8 +55,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    /*
+      suppressHydrationWarning is applied at both <html> and <body> for two reasons:
+
+      1. Browser extensions (Bitdefender, Grammarly, LastPass, dark-reader, etc.)
+         inject attributes into <html>/<body> after SSR but before React hydration.
+         These false-positive hydration warnings are noise.
+
+      2. This site uses Framer Motion heavily with `useInView` / `variants` /
+         `whileInView` patterns. Those produce slight inline-style differences
+         between SSR and client first paint. The visual outcome is identical for
+         users — the warnings are dev-only noise that doesn't impact production.
+
+      IMPORTANT: This does NOT hide real bugs. It only suppresses the specific
+      "server HTML didn't match client HTML on initial render" warning. Real
+      JavaScript errors, type errors, render errors, etc. still surface normally.
+    */
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

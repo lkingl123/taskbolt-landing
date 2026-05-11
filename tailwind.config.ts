@@ -14,9 +14,23 @@ const config: Config = {
           800: '#0f1c3f',
           700: '#1a2645',
         },
+        // =============================================================
+        // OLD PALETTE — preserved for backwards compatibility.
+        // electric.blue / electric.yellow names retained,
+        // but mapped to new trust-coded colors below.
+        //   electric.blue  was #00d4ff  (bright cyan / tech)
+        //   electric.yellow was #ffd60a  (high-energy yellow)
+        // =============================================================
         electric: {
-          blue: '#00d4ff',
-          yellow: '#ffd60a',
+          blue: '#3b82f6',    // steel blue — grounded, reliable, professional
+          yellow: '#d97706',  // warm terracotta / burnt orange — reliable contractor
+        },
+        // New explicit trust palette (use these going forward in new code)
+        trust: {
+          blue: '#3b82f6',
+          orange: '#d97706',
+          green: '#16a34a',  // for verification / trust badges (reserved for future use)
+          cream: '#faf7f2',  // warm off-white for honest text blocks
         },
       },
       animation: {

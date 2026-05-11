@@ -4,8 +4,29 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { COMPANY_NAME, CONTACT_EMAIL, COMPANY_LOCATION } from '@/lib/constants';
 
-export default function PrivacyPolicy() {
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
+// (Original SaaS/automation privacy policy moved here. References Stripe,
+// Twilio, Google Workspace, Slack, QuickBooks integrations. Replaced for
+// the local contract labor pivot. See git history for full content.)
+
+export default function PrivacyPolicy_OLD() {
   const lastUpdated = 'November 28, 2025';
+  return (
+    <div className="min-h-screen bg-navy-900">
+      // ... full SaaS privacy policy preserved in git history ...
+    </div>
+  );
+}
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// =====================================================================
+export default function PrivacyPolicy() {
+  const lastUpdated = 'May 10, 2026';
 
   return (
     <div className="min-h-screen bg-navy-900">
@@ -29,18 +50,19 @@ export default function PrivacyPolicy() {
         <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
         <p className="text-gray-400 mb-12">Last updated: {lastUpdated}</p>
 
-        <div className="prose prose-invert prose-lg max-w-none space-y-8">
+        <div className="max-w-none space-y-8">
           {/* Introduction */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>
             <p className="text-gray-300 leading-relaxed">
-              {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
-              This Privacy Policy explains how we collect, use, disclose, and safeguard your information
-              when you visit our website taskbolt.work and use our automation services.
+              {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is a Utah-based contract labor business
+              providing local hands-on services such as packaging, assembly, kitting, and prep work for
+              small businesses in the Salt Lake Valley and surrounding areas.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4">
-              Please read this privacy policy carefully. By using our services, you consent to the
-              practices described in this policy.
+              This Privacy Policy explains what information we collect when you visit our website
+              taskbolt.work, contact us about our services, or work with us as a client. By using our
+              website or services, you agree to the practices described here.
             </p>
           </section>
 
@@ -48,85 +70,99 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Information We Collect</h2>
 
-            <h3 className="text-xl font-semibold text-white mt-6 mb-3">Personal Information</h3>
+            <h3 className="text-xl font-semibold text-white mt-6 mb-3">When you contact us</h3>
             <p className="text-gray-300 leading-relaxed">
-              When you use our contact form or request a free audit, we may collect:
+              If you reach out by email, phone, or through our scheduling tool (Cal.com), we may
+              receive:
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>Name</li>
+              <li>Your name</li>
               <li>Email address</li>
               <li>Phone number</li>
-              <li>Business name</li>
-              <li>Information about your business needs and current workflows</li>
+              <li>Business name (if applicable)</li>
+              <li>A description of the work you need help with</li>
+              <li>Your pickup/dropoff address (only if you become a client)</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-white mt-6 mb-3">Automatically Collected Information</h3>
+            <h3 className="text-xl font-semibold text-white mt-6 mb-3">When you become a client</h3>
             <p className="text-gray-300 leading-relaxed">
-              When you visit our website, we may automatically collect certain information about your
-              device and usage patterns, including browser type, operating system, and pages visited.
-              This helps us improve our website and services.
+              In addition to the above, we may also handle:
+            </p>
+            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
+              <li>Invoice and payment information (processed by Stripe or similar payment processors)</li>
+              <li>Job-specific details (component lists, quantities, instructions)</li>
+              <li>Any product or material you hand over to us for the work</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-white mt-6 mb-3">Website analytics</h3>
+            <p className="text-gray-300 leading-relaxed">
+              We may collect basic, anonymous information about how people use our website (browser
+              type, pages visited, general location) to understand how our site is performing. This
+              data is not tied to your identity.
             </p>
           </section>
 
           {/* How We Use Your Information */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">How We Use Your Information</h2>
-            <p className="text-gray-300 leading-relaxed">We use the information we collect to:</p>
+            <p className="text-gray-300 leading-relaxed">We use information you provide to:</p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>Respond to your inquiries and provide customer support</li>
-              <li>Deliver the automation services you request</li>
-              <li>Send you relevant communications about our services</li>
-              <li>Improve our website and service offerings</li>
-              <li>Process payments (when applicable)</li>
-              <li>Comply with legal obligations</li>
+              <li>Respond to your inquiries and quote your job</li>
+              <li>Coordinate pickup and dropoff for active client work</li>
+              <li>Send invoices and process payments</li>
+              <li>Communicate about ongoing or recurring work</li>
+              <li>Comply with applicable laws (e.g., tax records)</li>
             </ul>
+            <p className="text-gray-300 leading-relaxed mt-4">
+              We do <strong>not</strong> sell, rent, or share your personal information with third parties for
+              marketing purposes.
+            </p>
           </section>
 
           {/* Third-Party Services */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Third-Party Services</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Third-Party Services We Use</h2>
             <p className="text-gray-300 leading-relaxed">
-              To provide our automation services, we integrate with various third-party platforms.
-              Depending on your specific automation setup, these may include:
+              To run our business, we use a few standard third-party tools. When you interact with us
+              through these channels, their own privacy policies also apply:
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li><strong>Stripe</strong> - Payment processing</li>
-              <li><strong>Twilio</strong> - SMS and voice communications</li>
-              <li><strong>Google Workspace</strong> - Gmail, Google Calendar integration</li>
-              <li><strong>Slack</strong> - Team notifications</li>
-              <li><strong>QuickBooks</strong> - Accounting integration</li>
-              <li><strong>Cal.com</strong> - Appointment scheduling</li>
-              <li><strong>n8n</strong> - Workflow automation</li>
+              <li><strong>Cal.com</strong> — for scheduling consultations</li>
+              <li><strong>Email providers</strong> (such as Gmail / Google Workspace) — for direct correspondence</li>
+              <li><strong>Stripe or similar payment processors</strong> — for invoicing and payment (when you become a paying client)</li>
+              <li><strong>Vercel</strong> — for hosting this website</li>
             </ul>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              Each of these services has their own privacy policies. We encourage you to review
-              their policies for information on how they handle your data.
-            </p>
           </section>
 
-          {/* Data Sharing */}
+          {/* Confidentiality of Client Work */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Data Sharing and Disclosure</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Confidentiality of Your Work</h2>
             <p className="text-gray-300 leading-relaxed">
-              We do not sell, trade, or rent your personal information to third parties. We may share
-              your information only in the following circumstances:
+              Most of our work involves handling another business&apos;s products, packaging, customer
+              orders, or proprietary materials. We treat this as confidential by default. We will not:
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li>With service providers who assist us in operating our business</li>
-              <li>To comply with legal obligations or respond to lawful requests</li>
-              <li>To protect our rights, privacy, safety, or property</li>
-              <li>In connection with a business transfer or merger</li>
+              <li>Discuss the specifics of your business or your products with anyone outside our team</li>
+              <li>Share photos or details of your work without your written permission</li>
+              <li>Use customer or recipient information you provide for any purpose other than completing your job</li>
             </ul>
+            <p className="text-gray-300 leading-relaxed mt-4">
+              For especially sensitive jobs, we&apos;re happy to sign your standard NDA before we begin.
+            </p>
           </section>
 
           {/* Data Security */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Data Security</h2>
             <p className="text-gray-300 leading-relaxed">
-              We implement appropriate technical and organizational security measures to protect your
-              personal information against unauthorized access, alteration, disclosure, or destruction.
-              However, no method of transmission over the Internet is 100% secure, and we cannot
-              guarantee absolute security.
+              We take reasonable care to protect the information you share with us. Personal contact
+              info is stored in standard business tools (email, scheduling, accounting). Physical
+              materials you hand off to us are kept in our local workspace, not shared, and returned
+              to you when the job is complete.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-4">
+              No system is perfectly secure, but we will not knowingly mishandle anything you trust
+              us with.
             </p>
           </section>
 
@@ -134,10 +170,9 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Data Retention</h2>
             <p className="text-gray-300 leading-relaxed">
-              We retain your personal information for as long as necessary to fulfill the purposes
-              outlined in this privacy policy, unless a longer retention period is required or
-              permitted by law. When we no longer need your information, we will securely delete
-              or anonymize it.
+              We keep client records (job details, invoices, contact info) as long as needed to provide
+              service and comply with legal/tax requirements. You may request deletion of your contact
+              record at any time by emailing us.
             </p>
           </section>
 
@@ -145,58 +180,49 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Your Rights</h2>
             <p className="text-gray-300 leading-relaxed">
-              Depending on your location, you may have certain rights regarding your personal information:
+              You can ask us at any time to:
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li><strong>Access:</strong> Request a copy of your personal information</li>
-              <li><strong>Correction:</strong> Request correction of inaccurate information</li>
-              <li><strong>Deletion:</strong> Request deletion of your personal information</li>
-              <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
+              <li><strong>See</strong> what information we have about you</li>
+              <li><strong>Correct</strong> anything that&apos;s wrong</li>
+              <li><strong>Delete</strong> your contact record (excluding records we&apos;re required to keep for tax purposes)</li>
+              <li><strong>Stop</strong> hearing from us</li>
             </ul>
             <p className="text-gray-300 leading-relaxed mt-4">
-              To exercise any of these rights, please contact us at{' '}
+              Just email{' '}
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-electric-blue hover:underline">
                 {CONTACT_EMAIL}
-              </a>.
+              </a>{' '}
+              and we&apos;ll handle it.
             </p>
           </section>
 
-          {/* Utah Residents */}
+          {/* Utah */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Utah Privacy Rights</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Utah Privacy Rights (UCPA)</h2>
             <p className="text-gray-300 leading-relaxed">
-              As a Utah-based business, we comply with the Utah Consumer Privacy Act (UCPA).
-              If you are a Utah resident, you have the following rights:
-            </p>
-            <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-              <li><strong>Access:</strong> Confirm whether we are processing your personal data and access that data</li>
-              <li><strong>Deletion:</strong> Request deletion of your personal data</li>
-              <li><strong>Portability:</strong> Obtain a copy of your data in a portable format</li>
-              <li><strong>Opt-out:</strong> Opt out of targeted advertising, sale of personal data, or profiling</li>
-            </ul>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              We do not sell personal data. To exercise your rights under the UCPA, please contact
-              us using the information provided below. We will respond to your request within 45 days.
+              As a Utah-based business, we comply with the Utah Consumer Privacy Act (UCPA). If you
+              are a Utah resident, you have the rights described above (access, correction, deletion,
+              portability, opt-out). We do not sell personal data and we do not use it for targeted
+              advertising or profiling.
             </p>
           </section>
 
           {/* Cookies */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">Cookies and Tracking</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Cookies</h2>
             <p className="text-gray-300 leading-relaxed">
-              We may use cookies and similar tracking technologies to enhance your experience on
-              our website. You can control cookie settings through your browser preferences.
-              Note that disabling cookies may affect certain features of our website.
+              Our website uses minimal cookies — basic functionality and (potentially) anonymous
+              analytics. You can disable cookies in your browser; the site will still work fine.
             </p>
           </section>
 
-          {/* Children's Privacy */}
+          {/* Children */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Children&apos;s Privacy</h2>
             <p className="text-gray-300 leading-relaxed">
-              Our services are not directed to individuals under the age of 18. We do not knowingly
-              collect personal information from children. If you believe we have collected information
-              from a child, please contact us immediately.
+              Our services are intended for businesses, not minors. We do not knowingly collect
+              information from children under 18.
             </p>
           </section>
 
@@ -204,9 +230,8 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Changes to This Policy</h2>
             <p className="text-gray-300 leading-relaxed">
-              We may update this privacy policy from time to time. We will notify you of any changes
-              by posting the new policy on this page and updating the &quot;Last updated&quot; date. We encourage
-              you to review this policy periodically.
+              We may update this policy as our business evolves. The &quot;Last updated&quot; date at the top
+              will reflect any changes.
             </p>
           </section>
 
@@ -214,10 +239,10 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
             <p className="text-gray-300 leading-relaxed">
-              If you have any questions about this Privacy Policy, please contact us:
+              Questions about this Privacy Policy? Reach out:
             </p>
             <ul className="list-none text-gray-300 mt-4 space-y-2">
-              <li><strong>Company:</strong> {COMPANY_NAME}</li>
+              <li><strong>Business:</strong> {COMPANY_NAME}</li>
               <li><strong>Location:</strong> {COMPANY_LOCATION}</li>
               <li>
                 <strong>Email:</strong>{' '}

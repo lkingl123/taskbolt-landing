@@ -3,9 +3,13 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { StarIcon } from '@heroicons/react/24/solid';
+import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 
-const testimonials = [
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
+const testimonials_OLD = [
   {
     name: 'Mike R.',
     role: 'Owner',
@@ -34,6 +38,44 @@ const testimonials = [
     results: '95% payment collection',
   },
 ];
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// "Built For" replaces testimonials until real ones are gathered
+// =====================================================================
+const builtFor = [
+  {
+    title: 'Etsy & Shopify Sellers',
+    description: "Order volume spiking? We pack while you create. Hangtag, polybag, label, and box-prep your outgoing orders so you can stop drowning at the kitchen table.",
+    examples: 'Soap makers, candle makers, jewelry, printables, paper goods',
+  },
+  {
+    title: 'Small Subscription Box Brands',
+    description: "If you ship 100 boxes a month or less and your monthly assembly day is eating your week, we can take it off your plate. Small-batch only.",
+    examples: 'Snack boxes, pet treat boxes, self-care, faith-based',
+  },
+  {
+    title: 'Local Utah Makers',
+    description: "Weekend market vendors and boutique brands who need help between markets. Restocking, kit-prep, packaging refresh, we handle the boring stuff so you can keep making.",
+    examples: 'Bath & body, home fragrance, paper goods, wellness',
+  },
+  {
+    title: 'Print & Promo Shop Overflow',
+    description: "Got a small finishing job that's killing your machine setup margins? Send small-batch work our way. Folding, bagging, hangtag attachment, light QC.",
+    examples: 'Screen printers, embroiderers, sign shops, promo brokers',
+  },
+  {
+    title: 'Small Wedding & Event Jobs',
+    description: "Smaller weddings and events that need favors or small welcome gifts assembled. We knock out small-batch jobs fast so you can focus on the event itself.",
+    examples: 'Wedding favors, welcome cards, small gift sets, place cards',
+  },
+  {
+    title: 'Solo Founders & Side Hustles',
+    description: "You started a brand, you sell on weekends, your day job eats your weekdays. We pick up your packing pile and hand it back ready to ship.",
+    examples: 'Online shop owners, weekend market sellers, side businesses',
+  },
+];
 
 export default function Testimonials() {
   const ref = useRef(null);
@@ -51,15 +93,15 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What Our <span className="text-electric-blue">Clients Say</span>
+            Built for <span className="text-electric-blue">Small Utah Operators</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Service businesses saving time and capturing more leads with automation
+            Whose backlog is killing their week
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {builtFor.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -67,33 +109,18 @@ export default function Testimonials() {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="bg-navy-800 p-8 rounded-xl border border-navy-700 hover:border-electric-blue transition-all duration-300 flex flex-col"
             >
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <StarIcon key={i} className="w-5 h-5 text-electric-yellow" />
-                ))}
+              <div className="flex items-start gap-3 mb-4">
+                <CheckBadgeIcon className="w-6 h-6 text-electric-yellow flex-shrink-0 mt-0.5" />
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
               </div>
 
-              {/* Testimonial Text */}
               <p className="text-gray-300 mb-6 leading-relaxed flex-grow text-sm">
-                "{testimonial.text}"
+                {item.description}
               </p>
 
-              {/* Results Badge */}
-              <div className="mb-6">
-                <div className="inline-block px-4 py-2 bg-electric-blue/10 border border-electric-blue/30 rounded-full">
-                  <span className="text-electric-blue font-semibold text-sm">
-                    ⚡ {testimonial.results}
-                  </span>
-                </div>
-              </div>
-
-              {/* Author Info */}
-              <div className="pt-6 border-t border-navy-700">
-                <div className="font-bold text-white">{testimonial.name}</div>
-                <div className="text-sm text-gray-400">
-                  {testimonial.role}, {testimonial.company}
-                </div>
+              <div className="pt-4 border-t border-navy-700">
+                <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Examples</div>
+                <div className="text-sm text-electric-blue">{item.examples}</div>
               </div>
             </motion.div>
           ))}

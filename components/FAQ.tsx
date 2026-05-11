@@ -5,7 +5,11 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
-const faqs = [
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
+const faqs_OLD = [
   {
     question: 'How quickly can you set this up?',
     answer: 'Most clients are live within 24-48 hours. We handle all the technical setup - you just tell us what you need automated.',
@@ -29,6 +33,53 @@ const faqs = [
   {
     question: 'What happens on the free call?',
     answer: '15 minutes to identify where automation can save you the most time. You\'ll leave with actionable insights even if you decide not to sign up.',
+  },
+];
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// =====================================================================
+const faqs = [
+  {
+    question: 'Where do you operate?',
+    answer: "We're based in West Jordan, Utah, and we're happy to drive out for pickup and dropoff anywhere in the Salt Lake Valley or nearby (Utah County, Davis County, that kind of range). We work with what fits the drive. We don't ship, so this is local-only.",
+  },
+  {
+    question: "What's your minimum?",
+    answer: "No minimum. We've taken jobs as small as 50 units. If it's smaller than that, we'll just quote it as a flat project fee instead of charging per piece.",
+  },
+  {
+    question: 'How fast is turnaround?',
+    answer: "Most jobs are done in 24 to 72 hours after pickup. If you've got a real deadline, let us know when you book and we'll work around it. Rush turnaround is available.",
+  },
+  {
+    question: 'Do you handle high-value items?',
+    answer: "We can, but talk to us first. For jobs with high-value or fragile items, we'll go over written counts, handling notes, and any specific requirements (insurance, COI, etc.) before pickup so everyone's on the same page.",
+  },
+  {
+    question: 'Do you sign NDAs?',
+    answer: "Yes, before we touch anything sensitive. Send your standard NDA over and we'll sign it before pickup.",
+  },
+  {
+    question: 'Can you ship the work back to us or our customers?',
+    answer: "No, we don't ship. We're a local hands-on operation, so we pick up and drop off in person. If you need a 3PL that ships out to your customers, we're not the right fit. We finish the work and return it to you locally.",
+  },
+  {
+    question: 'How do you charge?',
+    answer: "Whatever fits the job best. Repetitive work like assembly, packaging, and kitting is usually per-piece. Bursty stuff like wedding favors or product launches is usually a flat project fee. We'll always quote you before any work starts.",
+  },
+  {
+    question: 'Can you handle recurring weekly or monthly work?',
+    answer: 'Yes. Some clients use us once for a rush, others have us on a regular rotation, like monthly subscription box assembly or weekly Etsy order packing. No long-term contract needed either way.',
+  },
+  {
+    question: "What can't you take?",
+    answer: "We're a solo operation working out of a home shop, so we stick to small-batch jobs that fit in a car. No pallets, no oversized freight, no perishable food, no hazardous materials, and nothing that needs a forklift. If you're not sure, just ask and we'll tell you straight up.",
+  },
+  {
+    question: 'How big a job is too big?',
+    answer: "Rule of thumb: if the work fits in a regular car's trunk and back seat, we can take it. A few hundred small items is comfortable. A few thousand depends on size. If it needs a truck, a warehouse, or a crew, we're not the right fit.",
   },
 ];
 
@@ -108,7 +159,7 @@ export default function FAQ() {
               href="#contact"
               className="inline-block px-8 py-4 bg-electric-blue text-navy-900 font-bold rounded-lg hover:bg-electric-yellow transition-all duration-300 transform hover:scale-105"
             >
-              Schedule Free Call
+              Get in Touch
             </a>
           </motion.div>
         </div>

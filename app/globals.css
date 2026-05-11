@@ -13,11 +13,20 @@
 }
 
 @layer utilities {
+  /* glow utilities — colors updated to match the new trust palette */
+  /* Old values preserved in comments for reference */
+  /* OLD: rgba(0, 212, 255, 0.5)  (electric cyan) */
+  /* OLD: rgba(255, 214, 10, 0.5) (electric yellow) */
+
   .glow-electric {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* steel blue */
   }
 
   .glow-yellow {
-    box-shadow: 0 0 20px rgba(255, 214, 10, 0.5);
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.5); /* warm terracotta */
+  }
+
+  .glow-trust {
+    box-shadow: 0 0 20px rgba(22, 163, 74, 0.4); /* trust green */
   }
 }

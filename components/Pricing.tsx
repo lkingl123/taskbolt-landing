@@ -6,7 +6,11 @@ import { useRef } from 'react';
 import { CheckIcon } from '@heroicons/react/24/solid';
 import { CAL_URL } from '@/lib/constants';
 
-const packages = [
+// =====================================================================
+// OLD AUTOMATION VERSION — preserved (do not delete)
+// =====================================================================
+/*
+const packages_OLD = [
   {
     name: 'Starter',
     setup: '$497',
@@ -54,6 +58,43 @@ const packages = [
     isCustom: true,
   },
 ];
+*/
+
+// =====================================================================
+// LOCAL CONTRACT LABOR VERSION — active
+// =====================================================================
+const packages = [
+  {
+    name: 'Per-Piece',
+    setup: '$0.50 to $3.00',
+    monthly: 'per unit',
+    description: 'For repetitive small-batch work like assembly, packaging, kitting, and tagging.',
+    features: [
+      'No minimum, no cap up to a reasonable batch size',
+      'Best for jobs under a few hundred units',
+      'Local pickup available, no shipping',
+      'Most jobs done in 24 to 72 hours',
+      'Final price quoted before work starts',
+      'Examples: hangtagging, polybagging, kit assembly',
+    ],
+    popular: false,
+  },
+  {
+    name: 'Per-Project',
+    setup: 'Flat',
+    monthly: 'Quote',
+    description: 'For bursty needs like small events, launches, and end-of-season pushes.',
+    features: [
+      'One-time flat fee, no surprises',
+      'Local pickup available, no shipping',
+      'Rush turnaround available',
+      'Solo operator, small batches only',
+      'Best for 1 to 5 day project windows',
+      'Examples: wedding favors, small event prep, seasonal rush',
+    ],
+    popular: true,
+  },
+];
 
 export default function Pricing() {
   const ref = useRef(null);
@@ -72,15 +113,14 @@ export default function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Simple, Transparent <span className="text-electric-yellow">Pricing</span>
+            Pricing Built for <span className="text-electric-yellow">Small Operators</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose the package that fits your business. All plans include unlimited fixes,
-            guaranteed uptime, and no long-term contracts.
+            Two simple ways to pay, depending on the work. Local pickup is available across the Salt Lake Valley and nearby. No shipping. No minimums. No long-term contracts.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
@@ -96,7 +136,7 @@ export default function Pricing() {
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-electric-yellow text-navy-900 px-4 py-1 rounded-full text-sm font-bold">
-                    MOST POPULAR
+                    MOST COMMON
                   </div>
                 </div>
               )}
@@ -106,16 +146,11 @@ export default function Pricing() {
                 <p className="text-gray-400 text-xs md:text-sm mb-4 md:mb-6">{pkg.description}</p>
 
                 <div className="mb-3 md:mb-4">
-                  <div className="text-gray-400 text-xs md:text-sm mb-1">One-time setup</div>
                   <div className="text-3xl md:text-4xl font-bold text-electric-blue">{pkg.setup}</div>
                 </div>
 
                 <div>
-                  <div className="text-gray-400 text-xs md:text-sm mb-1">Then</div>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl md:text-5xl font-bold text-white">{pkg.monthly}</span>
-                    <span className="text-gray-400">/mo</span>
-                  </div>
+                  <div className="text-gray-400 text-sm">{pkg.monthly}</div>
                 </div>
               </div>
 
@@ -129,7 +164,7 @@ export default function Pricing() {
                     : 'bg-navy-700 text-white hover:bg-electric-blue hover:text-navy-900'
                 }`}
               >
-                Schedule a Call
+                Get a Quote
               </a>
 
               <ul className="space-y-4">
@@ -153,7 +188,7 @@ export default function Pricing() {
           className="text-center mt-12 text-gray-400"
         >
           <p className="text-sm">
-            All plans include: Unlimited fixes • 24-48hr response • Customer satisfaction guarantee • Cancel anytime
+            Every job: Local pickup available • No shipping • No minimums • Quoted before work starts
           </p>
         </motion.div>
       </div>
