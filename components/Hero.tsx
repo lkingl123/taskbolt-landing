@@ -154,19 +154,34 @@ export default function Hero() {
             transition={{ duration: 0.6, type: 'spring' }}
             className="flex justify-center mb-6 md:mb-8"
           >
-            {/* Logo (the ping animation duplicate was removed for a cleaner, less busy hero) */}
-            <Image
-              src="/taskbolt_logo.png"
-              alt="TaskBolt Logo"
-              width={180}
-              height={180}
-              quality={100}
-              unoptimized
-              className="w-[120px] h-[120px] md:w-[180px] md:h-[180px] drop-shadow-lg"
-              priority
-              loading="eager"
-              fetchPriority="high"
-            />
+            {/* Logo with the original pulsing ping halo behind it */}
+            <div className="relative">
+              <Image
+                src="/taskbolt_logo.png"
+                alt="TaskBolt Logo"
+                width={180}
+                height={180}
+                quality={100}
+                unoptimized
+                className="w-[120px] h-[120px] md:w-[180px] md:h-[180px] drop-shadow-lg"
+                priority
+                loading="eager"
+                fetchPriority="high"
+              />
+              <div className="absolute inset-0 w-[120px] h-[120px] md:w-[180px] md:h-[180px] animate-ping opacity-20">
+                <Image
+                  src="/taskbolt_logo.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={180}
+                  height={180}
+                  quality={100}
+                  unoptimized
+                  className="w-full h-full"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </motion.div>
 
           {/* Local-Utah pill */}
