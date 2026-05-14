@@ -22,21 +22,9 @@
 
 ---
 
-## Channel 1: KSL Classifieds ⭐ HIGHEST PRIORITY
+## ❌ SKIPPED: KSL Classifieds
 
-**Why:** Most Utahns check KSL before any other classified. Free.
-
-- [ ] Navigate: https://classifieds.ksl.com/
-- [ ] Click "Sell Stuff" / "Post Ad"
-- [ ] Sign in (you handle — I can't enter passwords)
-- [ ] Category: **Services** → **Other Services** OR **Business Services**
-- [ ] Title: `Local Utah Contract Labor — Packing, Assembly, Kitting (West Jordan)`
-- [ ] Body: paste from `docs/outreach-materials.md` "KSL Classifieds" section
-- [ ] Phone: `(385) 644-9992`
-- [ ] Email: `jake@taskbolt.work`
-- [ ] Location: West Jordan / 84088
-- [ ] Submit
-- [ ] Status:
+**Why:** KSL switched from free to a **$75/month subscription** for the Services category (verified May 14, 2026 — gotcha discovered mid-checkout). Moved to paid-list in `all-outreach-channels.md`. Filled the form completely, walked away at the payment step. Nothing was charged.
 
 ---
 

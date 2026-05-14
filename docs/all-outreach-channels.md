@@ -12,7 +12,7 @@
 
 | # | Channel | URL | Notes |
 |---|---|---|---|
-| 1 | **KSL Classifieds** | https://classifieds.ksl.com | Utah's biggest local classifieds. Most locals check KSL before Craigslist. Free. |
+| 1 | ~~**KSL Classifieds**~~ | https://classifieds.ksl.com | ❌ **PAID NOW.** $75/month subscription for Services category (verified May 14, 2026). Moved to paid tier below. |
 | 2 | **Facebook Marketplace** | https://facebook.com/marketplace | List as a Service. Free. Already logged in. |
 | 3 | **Nextdoor** (regular post) | https://nextdoor.com | Hyperlocal. Post in home zip + extend to neighbors. |
 | 4 | **Nextdoor Business Page** | https://business.nextdoor.com | Free local business listing, separate from neighborhood posts. |
@@ -147,6 +147,7 @@ Membership required, sometimes admin approval. Read pinned rules before posting.
 | # | Channel | Cost | Notes |
 |---|---|---|---|
 | P1 | **Craigslist** services post | $5 per category, per 30 days | Test once when revenue justifies. Auto-expires. |
+| P1b | **KSL Classifieds** services subscription | **$75/month recurring** | ⚠️ NOT a one-time test. Verified May 14, 2026 — KSL switched from free to a $75/mo subscription for the Services category. Walk away unless you're 100% on it. |
 | P2 | **Backpage successor sites** | varies | Most have died or rebranded. Skip. |
 
 ### Paid local advertising
