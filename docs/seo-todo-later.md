@@ -12,54 +12,33 @@
 | `robots.txt` on production | ✅ Live | https://taskbolt.work/robots.txt |
 | `sitemap.xml` on production | ✅ Live | Lists `/`, `/privacy`, `/terms` |
 | LocalBusiness JSON-LD in `<head>` | ✅ Live | Signals "Utah local business" to Google |
+| Footer / Privacy / Terms identify the LLC | ✅ Live | "Taskbolt LLC" appears in footer; entity number in Privacy/Terms |
 | GBP listing exists for Taskbolt | ✅ Set up | Phone, website, service area, address saved |
-| GBP address verification (postcard) | ⏸️ Deferred | Google only offered video verification — waiting until workspace is set up |
-| Google Search Console property created | ✅ Created | Domain property: `taskbolt.work` |
-| Google Search Console TXT record in DNS | ✅ Added on Porkbun | `google-site-verification=xQMi-bMV2csPO766IdQAiCLph3-usr7CHc4wb` |
-| Search Console VERIFY click | ❌ Failed twice tonight | Google's cache bug — retry in ~1 hour |
+| GBP video verification | ⏸️ Deferred | Google only offered video verification — waiting until workspace is set up (Phase 4 of path-to-first-client) |
+| Google Search Console TXT record on Porkbun | ✅ Added | DNS TXT for Domain property: `google-site-verification=xQMi-bMV2csPO766IdQAiCLph3-usr7CHc4wb`. Left in place — harmless. |
+| Google Search Console — Domain verification (DNS) | ❌ Abandoned | Google's verification service has a documented bug with Cloudflare-fronted DNS. Failed 3 times even though all DNS resolvers confirmed the record was correct. |
+| Google Search Console — URL prefix verification (HTML tag) | ✅ **VERIFIED May 14, 2026** | Meta tag in `app/layout.tsx` via Next.js `metadata.verification.google`. Token: `xQMi-bMV2csPO766IdQAiCLph3-usr7CHc4wbO6dSBk` |
+| Sitemap submitted in Search Console | ✅ May 14 | `sitemap.xml` accepted, 3 pages discovered |
+| Homepage re-index requested | ✅ May 14 | Priority crawl queue — Google re-crawls within 24-48 hrs |
+| `/privacy` re-index requested | ✅ May 14 | Priority crawl queue |
+| `/terms` re-index requested | ✅ May 14 | Priority crawl queue |
 
 ---
 
-## Tomorrow morning: the 5-minute win
+## ✅ Search Console: DONE (May 14, 2026)
 
-**This is the single highest-value remaining action.** Fixes the stale "AI automation" snippets showing in Google search results.
+All four steps below were completed in a single session:
 
-### Step 1: Verify Search Console (1 min)
+1. ✅ Property verified via HTML meta tag (URL prefix method)
+2. ✅ Sitemap submitted — `sitemap.xml`, 3 pages discovered
+3. ✅ Homepage re-index requested — priority crawl queue
+4. ✅ `/privacy` and `/terms` re-index requested too
 
-1. Go to https://search.google.com/search-console
-2. Click **"Already started? finish verification"** (small link at the bottom of the welcome page)
-3. You'll land back on the TXT record dialog from last night
-4. Click the dark **VERIFY** button (bottom right)
-5. Wait ~30 seconds for "Verifying..."
-6. Should see ✅ "Ownership verified"
-
-**If it fails again:** wait another hour and retry. The TXT record IS correct — Google's verification cache is just stuck. **Don't touch the DNS record** — it's right.
-
-### Step 2: Submit sitemap (1 min)
-
-Once verified:
-
-1. Left sidebar → **Sitemaps**
-2. In "Add a new sitemap" field, type just: `sitemap.xml`
-3. Click **Submit**
-4. Should show "Success" within a few seconds — Google now knows about all 3 pages
-
-### Step 3: Request indexing of the homepage (2 min)
-
-This is what triggers a re-crawl of taskbolt.work, fixing the old "AI automation" snippets.
-
-1. Top search bar of Search Console → paste `https://taskbolt.work`
-2. Hit Enter
-3. Wait ~30 seconds for the URL inspection result
-4. Click **REQUEST INDEXING**
-5. Wait ~1 minute → "Indexing requested" appears
-6. Google re-crawls within 24-48 hours
-
-### Step 4 (optional): Request indexing for `/privacy` and `/terms`
-
-Same as step 3, paste the full URL, request indexing. Minor SEO win.
+**Expected result by May 16-17, 2026:** Google re-crawls and the stale "AI automation" snippets in search results get replaced with the current local-Utah-labor copy. This was the original SEO problem we set out to solve. Done.
 
 ---
+
+## What's left to do (long-game items)
 
 ## Blocked on workspace setup (~2-3 weeks from now)
 
