@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SEO, CONTACT_EMAIL, CONTACT_PHONE_E164, COMPANY_LOCATION, COMPANY_NAME } from "@/lib/constants";
+import { SEO, CONTACT_EMAIL, CONTACT_PHONE_E164, COMPANY_LOCATION, COMPANY_NAME, COMPANY_LEGAL_NAME } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,6 +85,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: COMPANY_NAME,
+              legalName: COMPANY_LEGAL_NAME,
               description: SEO.description,
               url: SEO.siteUrl,
               telephone: CONTACT_PHONE_E164,

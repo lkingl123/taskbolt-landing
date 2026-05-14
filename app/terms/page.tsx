@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { COMPANY_NAME, CONTACT_EMAIL, COMPANY_LOCATION } from '@/lib/constants';
+import { COMPANY_NAME, COMPANY_LEGAL_NAME, COMPANY_ENTITY_NUMBER, CONTACT_EMAIL, COMPANY_LOCATION } from '@/lib/constants';
 
 // =====================================================================
 // OLD AUTOMATION VERSION — preserved (do not delete)
@@ -27,7 +27,7 @@ export default function TermsOfService_OLD() {
 // LOCAL CONTRACT LABOR VERSION — active
 // =====================================================================
 export default function TermsOfService() {
-  const lastUpdated = 'May 10, 2026';
+  const lastUpdated = 'May 14, 2026';
 
   return (
     <div className="min-h-screen bg-navy-900">
@@ -56,9 +56,10 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Agreement</h2>
             <p className="text-gray-300 leading-relaxed">
-              These Terms of Service apply when you use the {COMPANY_NAME} website at taskbolt.work or
-              hire {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;) for contract labor services. By using the
-              website or engaging us for work, you agree to these terms.
+              These Terms of Service apply when you use the {COMPANY_NAME} website at taskbolt.work
+              or hire {COMPANY_LEGAL_NAME} (Utah Entity #{COMPANY_ENTITY_NUMBER}) (&quot;{COMPANY_NAME},&quot;
+              &quot;we,&quot; &quot;our,&quot; &quot;us&quot;) for contract labor services. By
+              using the website or engaging us for work, you agree to these terms.
             </p>
           </section>
 
@@ -66,7 +67,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">What We Do</h2>
             <p className="text-gray-300 leading-relaxed">
-              {COMPANY_NAME} is a Utah-based independent contractor offering hands-on labor services
+              {COMPANY_LEGAL_NAME} is a Utah-registered limited liability company offering hands-on labor services
               to small businesses. Services may include, but aren&apos;t limited to:
             </p>
             <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
@@ -171,7 +172,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Independent Contractor Relationship</h2>
             <p className="text-gray-300 leading-relaxed">
-              {COMPANY_NAME} is an independent contractor — not an employee, agent, partner, or joint
+              {COMPANY_LEGAL_NAME} is an independent contractor, not an employee, agent, partner, or joint
               venturer of yours. Nothing in our service relationship creates such a relationship.
               Each party is responsible for its own taxes, insurance, and business expenses.
             </p>
@@ -202,7 +203,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
             <p className="text-gray-300 leading-relaxed">
-              To the maximum extent permitted by Utah law, {COMPANY_NAME}&apos;s total liability for any
+              To the maximum extent permitted by Utah law, {COMPANY_LEGAL_NAME}&apos;s total liability for any
               claim arising from these terms or our services is limited to the amount you paid us
               for the specific job giving rise to the claim. We are not liable for indirect,
               incidental, consequential, or special damages — including lost profits, lost sales,
@@ -251,7 +252,7 @@ export default function TermsOfService() {
               Questions about these Terms?
             </p>
             <ul className="list-none text-gray-300 mt-4 space-y-2">
-              <li><strong>Business:</strong> {COMPANY_NAME}</li>
+              <li><strong>Business:</strong> {COMPANY_LEGAL_NAME} (Utah Entity #{COMPANY_ENTITY_NUMBER})</li>
               <li><strong>Location:</strong> {COMPANY_LOCATION}</li>
               <li>
                 <strong>Email:</strong>{' '}

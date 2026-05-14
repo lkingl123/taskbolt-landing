@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { COMPANY_NAME, CONTACT_EMAIL, COMPANY_LOCATION } from '@/lib/constants';
+import { COMPANY_NAME, COMPANY_LEGAL_NAME, COMPANY_ENTITY_NUMBER, CONTACT_EMAIL, COMPANY_LOCATION } from '@/lib/constants';
 
 // =====================================================================
 // OLD AUTOMATION VERSION — preserved (do not delete)
@@ -26,7 +26,7 @@ export default function PrivacyPolicy_OLD() {
 // LOCAL CONTRACT LABOR VERSION — active
 // =====================================================================
 export default function PrivacyPolicy() {
-  const lastUpdated = 'May 10, 2026';
+  const lastUpdated = 'May 14, 2026';
 
   return (
     <div className="min-h-screen bg-navy-900">
@@ -55,9 +55,10 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>
             <p className="text-gray-300 leading-relaxed">
-              {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is a Utah-based contract labor business
-              providing local hands-on services such as packaging, assembly, kitting, and prep work for
-              small businesses in the Salt Lake Valley and surrounding areas.
+              {COMPANY_LEGAL_NAME} (&quot;{COMPANY_NAME},&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is a Utah
+              limited liability company (Entity #{COMPANY_ENTITY_NUMBER}) providing local hands-on
+              services such as packaging, assembly, kitting, and prep work for small businesses in
+              the Salt Lake Valley and surrounding areas.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4">
               This Privacy Policy explains what information we collect when you visit our website
@@ -242,7 +243,7 @@ export default function PrivacyPolicy() {
               Questions about this Privacy Policy? Reach out:
             </p>
             <ul className="list-none text-gray-300 mt-4 space-y-2">
-              <li><strong>Business:</strong> {COMPANY_NAME}</li>
+              <li><strong>Business:</strong> {COMPANY_LEGAL_NAME} (Utah Entity #{COMPANY_ENTITY_NUMBER})</li>
               <li><strong>Location:</strong> {COMPANY_LOCATION}</li>
               <li>
                 <strong>Email:</strong>{' '}

@@ -69,6 +69,10 @@ export const LEAD_CAPTURE_URL = 'https://app.taskbolt.work/api/lead-capture';
 
 // Company Info
 export const COMPANY_NAME = 'TaskBolt';
+export const COMPANY_LEGAL_NAME = 'Taskbolt LLC';
+export const COMPANY_ENTITY_NUMBER = '14694324-0160';
+export const COMPANY_ENTITY_STATE = 'Utah';
+export const COMPANY_ENTITY_FORMED = 'May 13, 2026';
 export const COMPANY_LOCATION = 'West Jordan, UT';
 export const COMPANY_TAGLINE = 'Local Utah Contract Labor for Small Businesses';
 export const SERVICE_RADIUS_MILES = 30;
