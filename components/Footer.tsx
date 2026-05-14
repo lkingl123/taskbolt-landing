@@ -1,6 +1,6 @@
 'use client';
 
-import { COMPANY_NAME, COMPANY_LEGAL_NAME, COMPANY_ENTITY_NUMBER, COMPANY_LOCATION, CONTACT_EMAIL, CONTACT_PHONE_E164, CONTACT_PHONE_DISPLAY } from '@/lib/constants';
+import { COMPANY_NAME, COMPANY_LEGAL_NAME, COMPANY_LOCATION, CONTACT_EMAIL, CONTACT_PHONE_E164, CONTACT_PHONE_DISPLAY } from '@/lib/constants';
 import Image from 'next/image';
 
 // =====================================================================
@@ -120,11 +120,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-navy-700 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm text-center md:text-left">
+          <p className="text-gray-400 text-sm">
             © {currentYear} {COMPANY_LEGAL_NAME}. All rights reserved.
-            <br className="md:hidden" />
-            <span className="hidden md:inline"> · </span>
-            <span className="text-gray-500">Utah Entity #{COMPANY_ENTITY_NUMBER}</span>
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-400">
             <a href="/privacy" className="hover:text-electric-blue transition-colors duration-300">
