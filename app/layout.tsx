@@ -47,6 +47,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // Google Search Console URL-prefix ownership verification.
+  // Domain-property DNS verification kept failing (Google bug with
+  // Cloudflare-fronted DNS) so we switched methods. This renders
+  // <meta name="google-site-verification" content="..." /> in <head>.
+  verification: {
+    google: "xQMi-bMV2csPO766IdQAiCLph3-usr7CHc4wbO6dSBk",
+  },
 };
 
 export default function RootLayout({
